@@ -20,13 +20,28 @@ registerddata.forEach((e, index) => {
   td5.innerText = e.vaccine;
   let otp = document.createElement("td");
   otp.innerText = Math.floor(1000 + Math.random() * 9000);
-  let td6 = document.createElement("button");
+
+  // let td6 = document.createElement("button");
+  // td6.innerText = "Delete";
+  // td6.addEventListener("click",function(){
+  // })
+  
+  let td6 = document.createElement("td");
   td6.innerText = "Delete";
-  td6.addEventListener("click",deletebtn)
+  td6.style.Color = "red";
+  td6.style.cursor = "pointer";
+  td6.addEventListener("click", function(){
+    e.target.parentNode.remove();
+    e.target.parentNode.innerHTML = "";
+  });
+
   td6.style.color = "red";
+  
+
   let td7 = document.createElement("td");
   td7.innerText = "vaccinate";
   td7.style.color = "green";
+  td7.style.cursor = "pointer";
   td7.addEventListener("click", vaccinatedbtn);
   function vaccinatedbtn() {
     popup.style.display = "block";
@@ -41,32 +56,33 @@ registerddata.forEach((e, index) => {
         popup.style.display = "none";
         let time = setInterval(() => {
           if (i == 1) {
-            alert("adde3d to queue");
+            alert(`${e.name} Added to Queue`);
           } else if (i == 5) {
-            alert("vaccine");
+            alert(`Vaccinating  ${e.vaccine}`);
           } else if (i == 10) {
-            alert("vaccinated");
+            alert(`${e.name} Vaccinated`);
             clearInterval(time);
           }
 
           i++;
         }, 1000);
       } else {
-        alert("bagun otp tak na");
+        alert("enter correct otp");
       }
       str = "";
     }
   }
 
-  function deletebtn(e,ind){
+  // function deletebtn(e,ind){
 
-    registerddata.splice(ind,1)
-    localStorage.setItem("data",JSON.stringify(registerddata))
+  //   registerddata.splice(ind,1)
+  //   localStorage.setItem("data",JSON.stringify(registerddata))
 
 
-  }
+  // }
+  
 
-  tr.append(td1, td2, td3, td4, td5, otp, td6, td7);
+  tr.append(td1, td2, td3, td4, td5, otp, td7, td6 );
   tbody.append(tr);
 });
 
@@ -84,3 +100,4 @@ let tabChange = function (val) {
     ele[val - 2].focus();
   }
 };
+
