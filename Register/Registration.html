@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <style>
+        section{
+            position: relative;
+        }
+        #card{
+            position: absolute;
+            margin-top: 5rem;
+            top:0;
+            display: none;
+            height:300px;
+            width:300px;
+            border: 1px red solid;
+            background-color: aqua;
+        }
+    </style>
+  </head>
+  <body>
+    <a href="../Dashboard/dashboard.html"></a>
+    <section>
+
+      <form id="form">
+        <input type="text" placeholder="name"  id="name" />
+        <input type="number" placeholder="age" id="age" />
+
+        <div id="radio" >
+            <input type="radio" name="radio"  value="employee" id="employee">
+            <label for="employee">Employee</label>
+        </div>
+        <div id="radio">
+            <input type="radio" name="radio"  value="student" id="student">
+            <label for="student">Student</label>
+        </div>
+
+        <select name="priority" id="priority" >
+
+            <option value="">designation</option>
+            <option value="p0">p0 </option>
+            <option value="p1"> p1</option>
+            <option value="p2"> p2</option>
+            <option value="p3">p3 </option>
+        </select>
+        <select name="vaccine" id="vaccine" >
+            <option value="">priority  </option>
+            <option value="Covishield ">Covishield  </option>
+            <option value="Covaxin "> Covaxin </option>
+            <option value="Sputnik"> Sputnik</option>
+        </select>
+        <input type="submit"id="button" value="Register Button"/>
+      </form>
+    
+    </section>
+  </body>
+</html>
+<script src="../scripts/register.js"></script>
+
+
+

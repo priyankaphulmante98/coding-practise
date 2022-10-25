@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <title>Dashboard</title>
+  </head>
+  <style>
+    
+table{
+  width: 80%;
+  border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
+  border-top: 2px solid #ffffff;
+  margin: auto;
+}
+  
+ td, th{
+    border-top: 2px solid #ffffff;
+    
+  }
+  
+  td{
+    border-left: 1px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    /* text-align: center; */
+  }
+  
+  th{
+    background-color: #4ECDC4;
+
+  }
+  
+  tr:nth-of-type(even) td{
+    background-color: lighten(#4ECDC4, 35%);
+  }
+  </style>
+  <body>
+    <section>
+      <table>
+        <thead>
+          <tr class="table-headers">
+            <th>Name</th>
+            <th>age</th>
+            <th>Designation</th>
+            <th>Priority</th>
+            <th>Vaccine</th>
+            <th>OTP</th>
+            <th>Delete</th>
+            <th>Vaccinate</th>
+          </tr>
+        </thead>
+        <tbody>
+         <!-- // write your code here -->
+        </tbody>
+      </table>
+    </section>
+    <div class="container">
+      <div class="inner">
+
+        
+        <div class="title">
+          Verify OTP
+        </div>
+       
+        <form action="" class="mt-5">
+          <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(1)' maxlength=1 >
+          <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 >
+          <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 >
+          <input class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 >
+        </form>
+        <hr class="mt-4">
+        <button class= 'customBtn'>Verify</button>
+        
+      </div>
+    </div>
+    </body>
+  <script src="../scripts//dashboard.js"></script>
+  </html>
+  

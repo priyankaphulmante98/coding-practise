@@ -1,0 +1,86 @@
+let registerddata = JSON.parse(localStorage.getItem("data"))||[];
+console.log(registerddata, "dashboard");
+let tbody = document.querySelector("tbody");
+let popup = document.querySelector(".container");
+
+
+let str = "";
+registerddata.forEach((e, index) => {
+  let tr = document.createElement("tr");
+  let td1 = document.createElement("td");
+  td1.innerText = e.name;
+
+  let td2 = document.createElement("td");
+  td2.innerText = e.age;
+  let td3 = document.createElement("td");
+  td3.innerText = e.des;
+  let td4 = document.createElement("td");
+  td4.innerText = e.priority;
+  let td5 = document.createElement("td");
+  td5.innerText = e.vaccine;
+  let otp = document.createElement("td");
+  otp.innerText = Math.floor(1000 + Math.random() * 9000);
+  let td6 = document.createElement("button");
+  td6.innerText = "Delete";
+  td6.addEventListener("click",deletebtn)
+  td6.style.color = "red";
+  let td7 = document.createElement("td");
+  td7.innerText = "vaccinate";
+  td7.style.color = "green";
+  td7.addEventListener("click", vaccinatedbtn);
+  function vaccinatedbtn() {
+    popup.style.display = "block";
+
+    let otpverify = document.querySelector(".customBtn");
+    otpverify.addEventListener("click", otpbtn1);
+
+    function otpbtn1() {
+      let i = 1;
+      console.log(str == otp.innerText);
+      if (str == otp.innerText) {
+        popup.style.display = "none";
+        let time = setInterval(() => {
+          if (i == 1) {
+            alert("adde3d to queue");
+          } else if (i == 5) {
+            alert("vaccine");
+          } else if (i == 10) {
+            alert("vaccinated");
+            clearInterval(time);
+          }
+
+          i++;
+        }, 1000);
+      } else {
+        alert("bagun otp tak na");
+      }
+      str = "";
+    }
+  }
+
+  function deletebtn(e,ind){
+
+    registerddata.splice(ind,1)
+    localStorage.setItem("data",JSON.stringify(registerddata))
+
+
+  }
+
+  tr.append(td1, td2, td3, td4, td5, otp, td6, td7);
+  tbody.append(tr);
+});
+
+let digitValidate = function (ele) {
+  str += ele.value;
+  console.log(ele.value);
+  ele.value = ele.value.replace(/[^0-9]/g, "");
+};
+
+let tabChange = function (val) {
+  let ele = document.querySelectorAll("input");
+  if (ele[val - 1].value != "") {
+    ele[val].focus();
+  } else if (ele[val - 1].value == "") {
+    ele[val - 2].focus();
+  }
+};
