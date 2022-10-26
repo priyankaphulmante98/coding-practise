@@ -25,17 +25,16 @@ registerddata.forEach((e, index) => {
   // td6.innerText = "Delete";
   // td6.addEventListener("click",function(){
   // })
+  //td6.style.color = "red";
   
-  let td6 = document.createElement("td");
-  td6.innerText = "Delete";
-  td6.style.Color = "red";
-  td6.style.cursor = "pointer";
-  td6.addEventListener("click", function(){
-    e.target.parentNode.remove();
-    e.target.parentNode.innerHTML = "";
-  });
 
+  let td6=document.createElement("td");
+  td6.innerText="Delete";
   td6.style.color = "red";
+  td6.style.cursor = "pointer";
+  td6.addEventListener("click",function(){
+      deletebtn(e,index);
+  })
   
 
   let td7 = document.createElement("td");
@@ -74,17 +73,20 @@ registerddata.forEach((e, index) => {
   }
 
   // function deletebtn(e,ind){
-
   //   registerddata.splice(ind,1)
   //   localStorage.setItem("data",JSON.stringify(registerddata))
-
-
-  // }
-  
+// }
 
   tr.append(td1, td2, td3, td4, td5, otp, td7, td6 );
   tbody.append(tr);
 });
+
+function deletebtn(e,index){
+  registerddata.splice(index,1);
+  localStorage.setItem("data",JSON.stringify(registerddata));
+  window.location.reload();
+//  let local= localStorage.setItem("trash",JSON.stringify(e));
+}
 
 let digitValidate = function (ele) {
   str += ele.value;

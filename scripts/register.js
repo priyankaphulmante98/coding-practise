@@ -1,9 +1,6 @@
 let form = document.getElementById('form')
 form.addEventListener('submit',myfunc);
 
-
-
-
 let registerData=JSON.parse(localStorage.getItem("data"))||[]
 function myfunc(e){
     e.preventDefault()
