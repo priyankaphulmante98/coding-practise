@@ -6,13 +6,15 @@ function myFun(){
 
     if(one.indexOf('@')<=0){
         document.getElementById("Message").innerHTML="Invalid @ position"
+        Message.style.color="red";
         return false;
     }
 
     // .b is not a valid tld 
 
     if((one.charAt(one.length-4)!='.')  && (one.charAt(one.length-3)!='.')){
-        document.getElementById("Message").innerHTML="Invalid .  position at 4"
+        document.getElementById("Message").innerHTML="Invalid .  position at 4 !"
+        Message.style.color="red";
         return false;
     }
    // @ is not present
