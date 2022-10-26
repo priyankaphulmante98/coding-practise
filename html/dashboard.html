@@ -39,6 +39,36 @@ table{
   }
   </style>
   <body>
+    <navbar>
+      <div><a href="../html/index.html">Register</a></div>
+      <div><a href="../html/dashboard.html">Dashboard</a></div>
+      <div><a href="../html/vaccinated.html">Vaccinated</a></div>
+
+    </navbar>
+
+    <section id="filter">
+      <select id="fpriority">
+       <option value="">Priority</option>
+        <option value="p0">p0</option>
+        <option value="p1">p1</option>
+        <option value="p2">p2</option>
+        <option value="p3">p3</option>
+      </select>
+      <!-- <button id="fage">ageAscending</button> -->
+      <select id="fage">
+        <option value="">SortByage</option>
+        <option value="asc">Ascending</option>
+        <option value="dsc">Descending</option>
+      </select>
+      <select id="fvaccine">
+        <option value="">Vaccine</option>
+        <option value="Covishield">Covishield</option>
+        <option value="Covaxin"> Covaxin</option>
+        <option value="Sputnik">Sputnik</option>
+      </select>
+
+     
+    </section>
     <section>
       <table>
         <thead>
@@ -54,7 +84,7 @@ table{
            
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbody">
          <!-- // write your code here -->
         </tbody>
       </table>
@@ -73,7 +103,7 @@ table{
           <input class="otp" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 >
           <input class="otp" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 >
         </form>
-        <hr class="mt-4">
+       
         <button class= 'customBtn'>Verify</button>
         
       </div>

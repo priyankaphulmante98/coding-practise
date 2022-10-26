@@ -27,7 +27,7 @@ else{
     registerData.push(obj)
     localStorage.setItem('data',JSON.stringify(registerData))
 
-    window.location.href="../Dashboard/dashboard.html"
+    window.location.href="../html/dashboard.html"
 
 
 }

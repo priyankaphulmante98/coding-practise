@@ -1,3 +1,26 @@
+
+
+
+
+navbar{
+  display: flex;
+  justify-content: space-around;
+  background-color: teal;
+  
+  font-weight: bold;
+  font-size: 32px;
+  padding: 0.5rem;
+}
+navbar div a{
+  text-decoration: none;
+  color: white;
+    }
+    
+
+
+
+
+
 h1{
     text-align: center;
     color:#2989c9;
@@ -50,16 +73,3 @@ h1{
   }
  
  
-  /* section{
-      position: relative;
-  }
-  #card{
-      position: absolute;
-      margin-top: 5rem;
-      top:0;
-      display: none;
-      height:300px;
-      width:300px;
-      border: 1px red solid;
-      background-color: aqua;
-  } */

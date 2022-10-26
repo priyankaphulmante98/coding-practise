@@ -2,10 +2,17 @@ let registerddata = JSON.parse(localStorage.getItem("data"))||[];
 console.log(registerddata, "dashboard");
 let tbody = document.querySelector("tbody");
 let popup = document.querySelector(".container");
+let filterdata=registerddata;
 
+//vaccinated data
+// let vdata=JSON.parse(localStorage.getItem("vaccinated"))||[]
 
 let str = "";
-registerddata.forEach((e, index) => {
+displayData(registerddata)
+
+function displayData(data){
+  document.getElementById("tbody").innerHTML=null
+data.forEach((e, index) => {
   let tr = document.createElement("tr");
   let td1 = document.createElement("td");
   td1.innerText = e.name;
@@ -46,10 +53,15 @@ registerddata.forEach((e, index) => {
     popup.style.display = "block";
 
     let otpverify = document.querySelector(".customBtn");
-    otpverify.addEventListener("click", otpbtn1);
+    otpverify.addEventListener("click", ()=>{
+      otpbtn1(e,index)
 
-    function otpbtn1() {
+    });
+
+    function otpbtn1(ele,ind) {
+     console.log(ele)
       let i = 1;
+      
       console.log(str == otp.innerText);
       if (str == otp.innerText) {
         popup.style.display = "none";
@@ -61,6 +73,15 @@ registerddata.forEach((e, index) => {
           } else if (i == 10) {
             alert(`${e.name} Vaccinated`);
             clearInterval(time);
+            vaccinedata(ele,ind);
+            // vdata.push(ele)
+            // localStorage.setItem("vaccinated",JSON.stringify(vdata))
+           function vaccinedata(ele,ind){
+            let vdata=JSON.parse(localStorage.getItem("vaccinated")) || []
+            vdata.push(ele);
+            localStorage.setItem("vaccinated", JSON.stringify(vdata))
+            deletebtn(ele,ind)
+           }
           }
 
           i++;
@@ -69,6 +90,7 @@ registerddata.forEach((e, index) => {
         alert("enter correct otp");
       }
       str = "";
+      // deletebtn(ele,ind)
     }
   }
 
@@ -80,6 +102,7 @@ registerddata.forEach((e, index) => {
   tr.append(td1, td2, td3, td4, td5, otp, td7, td6 );
   tbody.append(tr);
 });
+}
 
 function deletebtn(e,index){
   registerddata.splice(index,1);
@@ -102,4 +125,51 @@ let tabChange = function (val) {
     ele[val - 2].focus();
   }
 };
+
+
+
+//  filter and sorting
+
+// filter by priority
+let filterpriority=document.getElementById("fpriority")
+filterpriority.addEventListener("change",fpfun)
+function fpfun(){
+  let val=filterpriority.value
+ let data= filterdata.filter(e=>e.priority==val)
+console.log(data)
+displayData(data)
+
+}
+
+// filterby vaccine
+let fvaccine= document.getElementById("fvaccine")
+fvaccine.addEventListener("change",()=>{
+  console.log(fvaccine.value)
+  let val= fvaccine.value;
+  let data = filterdata.filter(e=>e.vaccine==val)
+  console.warn(data,"fvaccine")
+  displayData(data)
+})
+
+
+
+//filter by age
+let fage=document.getElementById("fage")
+fage.addEventListener("change",fagefun)
+// let btnval=fage.innerText
+function fagefun(){
+  btnval=fage.value
+  console.log(btnval)
+  if(btnval=="asc"){
+    filterdata.sort((a,b)=>a.age-b.age)
+    displayData(filterdata)
+ 
+  }
+  if(btnval=="dsc"){
+    filterdata.sort((a,b)=>b.age-a.age)
+    displayData(filterdata)
+   
+  }
+
+}
 

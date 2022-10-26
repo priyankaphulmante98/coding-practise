@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/vaccinated.css">
+    <title>Vaccinate</title>
+  </head>
+  <style>
+    
+table{
+  width: 80%;
+  border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
+  border-top: 2px solid #ffffff;
+  margin: auto;
+}
+  
+ td, th{
+    border-top: 2px solid #ffffff;
+    
+  }
+  
+  td{
+    border-left: 1px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    /* text-align: center; */
+  }
+  
+  th{
+    background-color: #4ECDC4;
+
+  }
+  
+  tr:nth-of-type(even) td{
+    background-color: lighten(#4ECDC4, 35%);
+  }
+  </style>
+  <body>
+    <navbar>
+        <div><a href="../html/index.html">Register</a></div>
+        <div><a href="../html/dashboard.html">Dashboard</a></div>
+        <div><a href="../html/vaccinated.html">Vaccinated</a></div>
+  
+      </navbar>
+    <section id="filter">
+      <select id="fpriority">
+       <option value="">Priority</option>
+        <option value="p0">p0</option>
+        <option value="p1">p1</option>
+        <option value="p2">p2</option>
+        <option value="p3">p3</option>
+      </select>
+      <!-- <button id="fage">ageAscending</button> -->
+      <select id="fage">
+        <option value="">SortByage</option>
+        <option value="asc">Ascending</option>
+        <option value="dsc">Descending</option>
+      </select>
+      <select id="fvaccine">
+        <option value="">Vaccine</option>
+        <option value="Covishield">Covishield</option>
+        <option value="Covaxin"> Covaxin</option>
+        <option value="Sputnik">Sputnik</option>
+      </select>
+
+     
+    </section>
+    <section>
+      <table>
+        <thead>
+          <tr class="table-headers">
+            <th>Name</th>
+            <th>age</th>
+            <th>Designation</th>
+            <th>Priority</th>
+            <th>Vaccine</th>
+            
+           
+          </tr>
+        </thead>
+        <tbody id="tbody">
+         <!-- // write your code here -->
+        </tbody>
+      </table>
+    </section>
+   
+    </body>
+  <script src="../scripts//vaccinate.js"></script>
+  </html>
+  
