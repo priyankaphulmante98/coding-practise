@@ -12,7 +12,7 @@
 
 - Your task is to build a Form Validator which validates email and password entered by user.
 
-![Screenshot 2022-10-14 at 4.04.16 PM.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af09e86f-a65f-4ed9-9501-cde21e0468e6/Screenshot_2022-10-14_at_4.04.16_PM.png)
+!(https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af09e86f-a65f-4ed9-9501-cde21e0468e6/Screenshot_2022-10-14_at_4.04.16_PM.png)
 
 - Create a form which takes following information from the user
     - Name
