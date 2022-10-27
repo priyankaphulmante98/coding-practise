@@ -15,6 +15,9 @@ h1{
     box-shadow: rgba(214, 55, 214, 0.2) 0px 8px 24px;
     background-color: whitesmoke; 
   }
+  label{
+   color: rgb(116, 106, 106);
+  }
 
   input[type="text"],
   input[type="number"],
@@ -43,6 +46,6 @@ h1{
   }
   
   #button:hover {
-    background-color: #3973b6;
+    background-color: rgb(53, 53, 53);
    
   }

@@ -1,4 +1,20 @@
 
+let form = document.getElementById('form')
+form.addEventListener('submit',myfunc);
+
+let validData=JSON.parse(localStorage.getItem("data"))||[]
+function myfunc(e){
+    e.preventDefault()
+  
+    let obj={
+        name:form.name.value,
+        email:form.email.value,
+        password:form.password.value,
+      
+    }
+    const {name,email,password}=obj  
+
+
 function myFun(){
     var one = document.myForm.email.value;
 
@@ -6,7 +22,7 @@ function myFun(){
 
     if(one.indexOf('@')<=0){
         document.getElementById("Message").innerHTML="Invalid @ position"
-        Message.style.color="red";
+        Message.style.color="red"
         return false;
     }
 
@@ -14,7 +30,7 @@ function myFun(){
 
     if((one.charAt(one.length-4)!='.')  && (one.charAt(one.length-3)!='.')){
         document.getElementById("Message").innerHTML="Invalid .  position at 4 !"
-        Message.style.color="red";
+        Message.style.color="red"
         return false;
     }
    // @ is not present
@@ -30,7 +46,31 @@ function myFun(){
 
 // Double dots are not allowed
 
+
+if(email==email  && password==password ){
+    alert("form submitted succesfully");
+    validData.push(obj)
+    localStorage.setItem('data',JSON.stringify(validData))
+
+} 
+
 }
+myFun();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //email use regexp
