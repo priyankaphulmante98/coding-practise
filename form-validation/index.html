@@ -11,16 +11,15 @@
 
  <h1 style="color:rgb(73, 70, 70)">Form Validation</h1>
     <section>
-    <form id="form"  name="myForm" onsubmit="return myFun()" >
+    <form id="form"  name="myForm" onsubmit="myFun()" >
         <label for="">Your Name</label>
         <input type ="text" placeholder="john Doe"  id="name"  name="" /><br>
         
         <span id="msg"></span>
-        <label for="">Email</label>
+        <label id="lemail">Email</label>
         <input type="text" placeholder="john@domain.com" id="email" name="email" value=""  /><br>
 
-        <span id="passmsg"></span>
-        <label for="">Password</label>
+        <label id="passmsg" for="">Password</label>
         <input type="text" placeholder="Password" id="password" value=""  /><br>
 
         <input type="submit" id="button" value="VALIDATE"  />

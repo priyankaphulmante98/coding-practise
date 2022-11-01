@@ -1,7 +1,8 @@
 
 let form = document.getElementById('form')
 form.addEventListener('submit',myfunc);
-
+let label=document.getElementById("lemail")
+let spass=document.getElementById("passmsg")
 let validData=JSON.parse(localStorage.getItem("data"))||[]
 function myfunc(e){
     e.preventDefault()
@@ -13,115 +14,112 @@ function myfunc(e){
       
     }
     const {name,email,password}=obj  
-
-
+ 
 function myFun(){
-    var one = document.myForm.email.value
-  
+    var one = document.myForm.email.value.trim()
 
+    let[e,p]=[false,false]
+    checkemail(one)
+    checkpass(password)
 
-    // No character before @ 
-
-    if(one.indexOf('@')<=0){
-        document.getElementById("msg").innerHTML="**Invalid @ position";
-        msg.style.color="red";
-        return false;
-    }
-
-
-    // .b is not a valid tld 
-
-    if((one.charAt(one.length-4)!='.')  && (one.charAt(one.length-3)!='.')){
-        document.getElementById("msg").innerHTML="**Invalid . position at 4 !";
-       msg.style.color="red";
-        return false;
-    }
-
-  // @ is not present
-
-
-
-   // Domain can not start with dot . 
+function checkemail(email){
     
 
-// //   Domain can not start with dot . 
-// if(one.statrtsWith('.')){
-//     document.getElementById("Message").innerHTML="Invalid .  position"
-//     Message.style.color="red"
-//     return false;
-// }
+ let char="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-0123456789@."
 
-
-// An email should not be start with . 
-
-
-// Only allows character, digit, underscore, and dash 
-
-
-// Double dots are not allowed
-
-
-
-//password
-// You should have following validation for password present
-var pass = document.getElementById("password").value;
-if(pass==""){
-    document.getElementById("passmsg").innerHTML="** please fill password";
-    passmsg.style.color="red";
-        return false;
+let dom1 = email.split(".")  
+let dom =dom1[dom1.length-1]
+let at=email.indexOf("@")
+let validdom=false
+let alchar=true
+let dbldot=false
+let domains=["com","in","gov","org","edu","net"]
+for(let i=0;i<domains.length;i++){
+    if(dom==domains[i]){
+        validdom=true
+    }
 }
 
-// Length of password should be greater than 6.
-if(pass.length < 6 ){
-    document.getElementById("passmsg").innerHTML="** password length must be < 6 char";
-    passmsg.style.color="red";
-        return false;
+for(let i=0;i<email.length;i++){
+    if(!char.includes(email[i])){
+        alchar=false
+    }
+    if(email[i]=="."&&email[i+1]==".")dbldot=true
+}
+// console.log(alchar,"alchar")
+label.style.color="red"
+if(email[0]=="."||email[0]=="@"){
+    console.log("invalidstart")
+label.innerText="**invalidstart"
+}
+else if(!email.includes("@")){console.log("@ not present")
+label.innerText="**invalidstart"
+}
+else if(email[at+1]==".")label.innerText="domain cant start with ."
+else if(validdom==false)label.innerText=`invalid tld domain ${dom}`
+else if(alchar==false)label.innerText="Only allows character, digit, underscore, and dash "
+else if(dbldot) label.innerText='double dots'
+else {
+    label.innerText="email is authorized"
+    label.style.color="green"
+    e=true
+}
 }
 
-// At-least one uppercase alphabet password.
-if(pass.toUppercase <=1 ){
-    document.getElementById("passmsg").innerHTML="**  At-least one uppercase alphabet";
-    passmsg.style.color="red";
-        return false;
-}
+function checkpass(pass){
+    let up=false;
+    let nm=false;
+    let upperc="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    let numeric="0123456789";
+    let char="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz"
+    let notvalidchar=false
 
-// //Only alphanumeric inputs are accepted in the password field.
-// let alphaNum =/^[A-Z a-z 0-9]  /;
-// if(pass.match(alphaNum)) 
-// true;
-// else{
-//     document.getElementById("passmsg").innerHTML="** type only alphaNumeric"
-//     passmsg.style.color="red";
-//         return false;
-// }
+    for(let i=0;i<pass.length;i++){
+        if(upperc.includes(pass[i])) up=true
+        if(numeric.includes(pass[i]))nm=true
+        if(!char.includes(pass[i]))notvalidchar=true
+    }
 
+    if(pass.length<6){
+        spass.innerText="password atleast contain 6 letters"
+        spass.style.color="red"
 
+    }
+    else if(!up){
+        spass.innerText="must Contain atleast one Uppercase";
+        spass.style.color="red"
+    }
+   else if(!nm){
+        spass.innerText="must Contain atleast one Numeric value";
+        spass.style.color="red"
+    }else if(notvalidchar){
+        spass.innerText="must only Contain alphanumericvalue ";
+        spass.style.color="red"
 
-
-// At-least one numeric value must be used in the password.
-let Num =/^[0-9]  /;
-if(pass.length.Num <=1 ){
-    document.getElementById("passmsg").innerHTML="**At-least one numeric value must be used in the password ";
-    passmsg.style.color="red";
-        return false;
-}
-
-
-
-// Throw warnings if any of the above validations failed.
-
-
-
-if(email==email  && password==password ){
-    alert("form submitted succesfully");
-    validData.push(obj)
-    localStorage.setItem('data',JSON.stringify(validData))
+    }
+else {
+        spass.innerText="password authorized";
+        spass.style.color="green"
+        p=true
+    }
 
 }
+  if(e&&p){
+    alert("validated successfully")
+  }
+
+  }
+  myFun();
 
 }
-myFun();
-}
+
+
+// done
+
+
+
+
+
 
 
 
