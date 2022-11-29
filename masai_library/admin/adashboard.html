@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./adashboard.css">
     <title>Document</title>
 </head> 
  <style>
-    
-    table{
-      width: 90%;
+   body{
+  font-family: "Poppins", sans-serif;
+  /* background-color: rgba(0, 0, 0, 0.849); */
+  background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+  background-attachment: fixed;
+}
+      table{
+      width: 99%;
       border-collapse: collapse;
       text-align: left;
       overflow: hidden;
       border-top: 2px solid #ffffff;
       margin: auto;
+      margin-top: 20px;
     }
     img{
         width: 100px;
@@ -22,7 +30,7 @@
       
      td, th{
         border-top: 2px solid #ffffff;
-        /* width: 300px; */
+        width: 300px;
         
       }
       
@@ -33,18 +41,19 @@
       }
       
       th{
-        background-color: #4ECDC4;
+        background-color: orange
     
       }
       
       tr:nth-of-type(even) td{
-        background-color: lighten(#4ECDC4, 35%);
+        background-color: lighten(#cfa957, 35%);
       }
       </style>
 <body>
+  <h1> Admin Dashboard</h1>
     <form id="form">
-        <input type="url" id="img" placeholder="image">
-        <input type="text" id="name" placeholder="book name">
+        <input type="url" id="img" placeholder="image"> &nbsp;<input type="text" id="name" placeholder="book name">
+       
         <input type="text" id= "author" placeholder="author name">
         <select id="genre">
             <option value="">Genre</option>
@@ -63,7 +72,7 @@
         </select>
         <input type="text" id="publisher" placeholder="Publisher">
         <input type="number" id="cost" placeholder="Cost">
-        <input type="submit" value="submit">
+        <input type="submit" id="submit" value="submit">
     </form>
 
 

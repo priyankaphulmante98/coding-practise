@@ -1,0 +1,137 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./admin.css"> -->
+    <style>
+      body{
+    font-family: "Poppins", sans-serif;
+  /* background-color: rgba(0, 0, 0, 0.849); */
+  background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#navbar{
+ display: flex;
+ margin-top: 0px;
+ justify-content: space-around;
+ background-color: orange;
+ font-weight: bold;
+ font-size: 32px;
+ padding: 0.5rem;
+}
+#navbar a:hover{
+   color:black;
+}
+#navbar div a{
+ text-decoration: none;
+ color: white;
+   }
+      h1{
+    text-align: center;
+    font-weight: 0px;
+    margin:15 15 15 15;
+    color:white;
+}
+h1:hover{
+   color:orange;
+}
+  #form{
+    width: 400px;
+    height: 220px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+    padding: 30px ;
+    box-shadow: orange 0px 8px  24px;
+    background-color: whitesmoke; 
+  }
+  label{
+   color: rgb(114, 106, 106);
+   
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 90%;
+    /* text-align: center; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    /* box-sizing: border-box; */
+    margin-top: 10px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    background-color: orange;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: rgb(53, 53, 53);
+   
+  }
+    </style>
+    <title>Document</title>
+    
+ </head>
+ <body>
+
+ <navbar id="navbar">
+  <div><a href="./adminlogin.html">LOGIN</a></div>
+  <div><a href="./adashboard">Dashboard</a></div>
+</navbar>
+<h1>ADMIN LOGIN FORM</h1>
+
+    <form id="form">
+         <label for="">Email</label>
+        <input type="text" id="email" placeholder="admin@gmail.com">
+       
+
+        <label for="">Password</label>
+        <input type="password" id="password" placeholder="masai">
+      
+        <button type="submit">Submit</button>
+
+    </form>
+ </body>
+ </html>
+ <script>
+    let form = document.getElementById("form");
+    form.addEventListener("submit", loginfunction);
+
+    function loginfunction(e){
+      e.preventDefault();
+     
+      let obj={
+        email:form.email.value,
+        password:form.password.value
+      }
+     
+      if(obj.email=="admin@gmail.com" && obj.password=="masai"){
+        alert("login sucessful")
+        window.location.href="./adashboard.html"
+      }else{
+        alert("wrong credintials")
+      }
+      
+
+    }
+ </script>

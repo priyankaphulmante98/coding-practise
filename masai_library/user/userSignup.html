@@ -1,0 +1,131 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./admin.css"> -->
+    <style>
+body{
+  font-family: "Poppins", sans-serif;
+  /* background-color: rgba(0, 0, 0, 0.849); */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxkfwCg3M5LjtoJk6twRG_tB-Yu_X_wL5Prg&usqp=CAU ");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1{
+text-align: center;
+font-weight: 0px;
+margin:15 15 15 15;
+margin-top: 50px;
+color:white;
+    }
+    h1:hover{
+        color:orange;
+    }
+  #form{
+    width: 400px;
+    height: 300px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+    padding: 30px ;
+    box-shadow: orange 0px 8px  24px;
+    background-color: whitesmoke; 
+  }
+  label{
+   color: rgb(114, 106, 106);
+   
+  }
+
+  input[type="text"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 90%;
+    /* text-align: center; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    /* box-sizing: border-box; */
+    margin-top: 10px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    background-color: orange;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 150px;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: rgb(53, 53, 53);
+   
+  }
+    </style>
+    <title> User Registration</title>
+    
+ </head>
+ <body>
+  
+  <h1>USER REGISTRATION FORM</h1>
+    <form id="form">
+        
+        <label for="">Username</label>
+        <input type="text" id="name" placeholder="Username">
+
+         <label for="">Email</label>
+        <input type="text" id="email" placeholder="email">
+       
+
+        <label for="">Password</label>
+        <input type="password" id="password" placeholder="password">
+      
+        <button type="submit">Submit</button>
+
+    </form>
+ </body>
+<!-- <script src="./user.js"></script> -->
+<script>
+let form= document.getElementById("form");
+form.addEventListener("submit", loginfunction)
+
+let signupData=JSON.parse(localStorage.getItem("data")) || []
+
+function loginfunction(e){
+    e.preventDefault()
+// console.log("hi priya");
+
+let obj ={
+    name:form.name.value,
+    email: form.email.value,
+    password:form.password.value
+}
+const {name, email, password} =obj
+
+if(name=="" || email=="" || password ==""){
+    alert("Fill your details first")
+}else{
+
+    alert("signup is sucessfully")
+    signupData.push(obj)
+    localStorage.setItem("data", JSON.stringify(signupData));
+    window.location.href="./userlogin.html"
+}
+// window.location.href="./userlogin.html"
+
+}
+
+</script>
+

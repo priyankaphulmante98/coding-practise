@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- <link rel="stylesheet" href="./admin.css"> -->
+   <style>
+body{
+ font-family: "Poppins", sans-serif;
+ /* background-color: rgba(0, 0, 0, 0.849); */
+ background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxkfwCg3M5LjtoJk6twRG_tB-Yu_X_wL5Prg&usqp=CAU ");
+ background-size: cover;
+ background-attachment: fixed;
+}
+#navbar{
+ display: flex;
+ margin-top: 0px;
+ justify-content: space-around;
+ background-color: orange;
+ font-weight: bold;
+ font-size: 32px;
+ padding: 0.5rem;
+}
+#navbar a:hover{
+   color:black;
+}
+#navbar div a{
+ text-decoration: none;
+ color: white;
+   }
+h1{
+text-align: center;
+font-weight: 0px;
+margin:15 15 15 15;
+color:white;
+   }
+   #form{
+    width: 400px;
+    height: 220px;
+    /* border: 2px solid black; */
+    border-radius: 10px;
+    margin: auto;
+    align-items: center;
+    margin-top: 20px;
+    padding: 30px ;
+    box-shadow: orange 0px 8px  24px;
+    background-color: whitesmoke; 
+  }
+  label{
+   color: rgb(114, 106, 106);
+   
+  }
+
+ input[type="text"],
+ input[type="password"],
+ select,
+ textarea {
+   width: 90%;
+   /* text-align: center; */
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 2px;
+   /* box-sizing: border-box; */
+   margin-top: 10px;
+   margin-bottom: 16px;
+   resize: vertical;
+ }
+
+ button[type="submit"] {
+   background-color: orange;
+   color: white;
+   padding: 12px 20px;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   width: 150px;
+   font-size: 15px;
+   margin-left: 100px;
+   margin-top: 10px;
+ }
+ 
+ button:hover {
+   background-color: rgb(53, 53, 53);
+  
+ }
+   </style>
+   <title> User Registration</title>
+   
+</head>
+<body>
+ 
+ <navbar id="navbar">
+   <div><a href="./userSignup.html">signup</a></div>
+   <div><a href="./bookpage.html">Book-Page</a></div>
+ </navbar>
+ 
+ <h1>USER LOGIN FORM</h1>
+
+ <form id="form">
+    <label for="">Email</label>
+   <input type="text" id="email" placeholder="enter email">
+  
+
+   <label for="">Password</label>
+   <input type="password" id="password" placeholder="enter password">
+ 
+   <button type="submit" id="submit" >Submit</button>
+
+</form>
+
+</body>
+<script>
+   
+let form = document.getElementById("form")
+form.addEventListener("submit", loginfunc)
+
+function loginfunc(e){
+    e.preventDefault()
+
+    let data={
+        email:form.email.value,
+        password:form.password.value
+    }
+    
+    if(signupData===null){
+        alert("please create an account");
+
+    }else if(signupData.email===data.email && signupData.password===data.password){
+        alert("login successful")
+        window.location.href="./bookpage.html"
+    }else{
+        alert("login failed")
+    }
+
+}
+
+</script>
