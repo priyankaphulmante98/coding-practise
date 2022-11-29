@@ -97,7 +97,7 @@
 
 - Fetch all the data of books from the JSON server and display them in form of cards.
 
-![                                                                              Reference Image - 1](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89aba6b1-f43c-413a-8253-c790adae0b6f/Reference-Book-1.png)
+![                                                                              Reference Image - 1](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/89aba6b1-f43c-413a-8253-c790adae0b6f/Images/img2.png)
 
                                                                               Reference Image - 1
 
@@ -114,7 +114,7 @@
 - There should be a borrow button appended to each of the books.
 - When clicking on the Borrow button, open up a modal that shows the summary of the bill along with book details.
 
-![                                 Reference Image - 2](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94a9f369-a758-4494-b027-cec53071af51/Reference-Book-2.png)
+![                                 Reference Image - 2](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/94a9f369-a758-4494-b027-cec53071af51/Images/img2.png)
 
                                  Reference Image - 2
 
