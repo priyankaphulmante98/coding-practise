@@ -112,27 +112,33 @@ color:white;
 </body>
 <script>
    
+let signupData=JSON.parse(localStorage.getItem("data")) || [];
 let form = document.getElementById("form")
 form.addEventListener("submit", loginfunc)
 
+// console.log(signupData)
 function loginfunc(e){
     e.preventDefault()
-
-    let data={
-        email:form.email.value,
-        password:form.password.value
-    }
     
-    if(signupData===null){
-        alert("please create an account");
 
-    }else if(signupData.email===data.email && signupData.password===data.password){
-        alert("login successful")
-        window.location.href="./bookpage.html"
-    }else{
-        alert("login failed")
+    let obj ={
+       email:form.email.value,
+       password:form.password.value
     }
 
+    // console.log(obj);
+    let flag=false
+
+   let data= signupData.filter(e=>e.email==obj.email&&e.password==obj.password)
+ 
+// console.log(data,"dsafdsf");
+if(data.length){
+  alert("logged in successfully")
+  window.location.href="bookpage.html"
+}
+else{
+  alert("check the creadentials")
+}
 }
 
 </script>

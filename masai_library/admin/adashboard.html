@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./adashboard.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./adashboard.css" />
     <title>Document</title>
-</head> 
- <style>
-   body{
-  font-family: "Poppins", sans-serif;
-  /* background-color: rgba(0, 0, 0, 0.849); */
-  background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
-  background-size: cover;
-  background-attachment: fixed;
-}
-      table{
+  </head>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      /* background-color: rgba(0, 0, 0, 0.849); */
+      background-image: url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGlicmFyeXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    table {
+     
       width: 99%;
       border-collapse: collapse;
       text-align: left;
@@ -24,172 +25,250 @@
       margin: auto;
       margin-top: 20px;
     }
-    img{
-        width: 100px;
+    img {
+      width: 100px;
     }
-      
-     td, th{
-        border-top: 2px solid #ffffff;
-        width: 300px;
-        
-      }
-      
-      td{
-        border-left: 1px solid #ffffff;
-        border-right: 2px solid #ffffff;
-        /* text-align: center; */
-      }
-      
-      th{
-        background-color: orange
-    
-      }
-      
-      tr:nth-of-type(even) td{
-        background-color: lighten(#cfa957, 35%);
-      }
-      </style>
-<body>
-  <h1> Admin Dashboard</h1>
-    <form id="form">
-        <input type="url" id="img" placeholder="image"> &nbsp;<input type="text" id="name" placeholder="book name">
-       
-        <input type="text" id= "author" placeholder="author name">
-        <select id="genre">
-            <option value="">Genre</option>
-            <option value="science">Science</option>
-            <option value="fiction">Fiction</option>
-            <option value="history">History</option>
-            <option value="tech">Tech</option>
-            <option value="business">Business</option>
-        </select>
-        <select id="edition">
-            <option value="">Edition</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-          
-        </select>
-        <input type="text" id="publisher" placeholder="Publisher">
-        <input type="number" id="cost" placeholder="Cost">
-        <input type="submit" id="submit" value="submit">
-    </form>
 
+    td,
+    th {
+      border-top: 2px solid #ffffff;
+      width: 300px;
+      color: black;
+    }
+
+    td {
+      border-left: 1px solid #ffffff;
+      border-right: 2px solid #ffffff;
+      /* text-align: center; */
+      color: black;
+      background-color: #cfa957;
+    }
+
+    th {
+      background-color: orange;
+    }
+
+    tr:nth-of-type(even) td {
+      background-color: lighten(#cfa957, 35%);
+    }
+  </style>
+  <body>
+    <h1>Admin Dashboard</h1>
+    <form id="form">
+      <input type="url" id="img" placeholder="image" /> &nbsp;<input
+        type="text"
+        id="name"
+        placeholder="book name"
+      />
+
+      <input type="text" id="author" placeholder="author name" />
+      <select id="genre">
+        <option value="">Genre</option>
+        <option value="science">Science</option>
+        <option value="fiction">Fiction</option>
+        <option value="history">History</option>
+        <option value="tech">Tech</option>
+        <option value="business">Business</option>
+      </select>
+      <select id="edition">
+        <option value="">Edition</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+      <input type="text" id="publisher" placeholder="Publisher" />
+      <input type="number" id="cost" placeholder="Cost" />
+      <input type="submit" id="submit" value="submit" />
+    </form>
 
     <!-- table -->
     <table>
-        <thead>
-          <tr class="table-headers">
-            <th>image</th>
-            <th>Book Name</th>
-            <th>Author</th>
-            <th>Genre</th>
-            <th>Year</th>
-            <th>Publisher</th>
-            <th>Cost</th>
-            <th>Borrowed</th>
-            <th>Update</th>
-             <th>Delete</th>
-          </tr>
+      <thead>
+        <tr class="table-headers">
+          <th>image</th>
+          <th>Book Name</th>
+          <th>Author</th>
+          <th>Genre</th>
+          <th>Year</th>
+          <th>Publisher</th>
+          <th>Cost</th>
+          <th>Borrowed</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="tbody">
+        <!-- // write your code here -->
+      </tbody>
+    </table>
 
-        </thead>
-        <tbody id="tbody">
-         <!-- // write your code here -->
-        </tbody>
-      </table>
-</body>
+    <form id="form" class="updateForm">
+      <input type="url" id="img" placeholder="image" /> &nbsp;<input
+        type="text"
+        id="name"
+        placeholder="book name"
+      />
+
+      <input type="text" id="author" placeholder="author name" />
+      <select id="genre">
+        <option value="">Genre</option>
+        <option value="science">Science</option>
+        <option value="fiction">Fiction</option>
+        <option value="history">History</option>
+        <option value="tech">Tech</option>
+        <option value="business">Business</option>
+      </select>
+      <select id="edition">
+        <option value="">Edition</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+      </select>
+      <input type="text" id="publisher" placeholder="Publisher" />
+      <input type="number" id="cost" placeholder="Cost" />
+      <input type="submit" id="submit" value="submit" />
+    </form>
+  </body>
 </html>
 <script>
- 
-let form = document.getElementById("form")
-form.addEventListener("submit",addfunction)
+  let form = document.getElementById("form");
+  form.addEventListener("submit", addfunction);
 
-
-function addfunction(e){
-    e.preventDefault()
+  function addfunction(e) {
+    e.preventDefault();
 
     let obj = {
-      image_url:form.img.value ,
-     book_name:form.name.value ,
-     author: form.author.value ,
-     genre: form.genre.value,
-      edition:form.edition.value ,
+      image_url: form.img.value,
+      book_name: form.name.value,
+      author: form.author.value,
+      genre: form.genre.value,
+      edition: form.edition.value,
       publisher: form.publisher.value,
       cost: form.cost.value,
-      borrowed: false
-    }
+      borrowed: false,
+    };
     // console.log(obj)
-// alert("alo")
-PostBook(obj)
-
-    
-
-}
-async function PostBook(bdata){
-    let res = await fetch("http://localhost:3004/books",{
-        method:"POST",
-        body: JSON.stringify(bdata),
-        headers:{
-            'Content-Type': 'application/json'
-        }
+    // alert("alo")
+    PostBook(obj);
+  }
+  async function PostBook(bdata) {
+    let res = await fetch("http://localhost:3004/books", {
+      method: "POST",
+      body: JSON.stringify(bdata),
+      headers: {
+        "Content-Type": "application/json",
+      },
     });
-    let data= await res.json()
-    console.log(data,"dataa")
+    let data = await res.json();
+    console.log(data, "dataa");
+  }
 
-}
-
- async function getdata(){
+  async function getdata() {
     let res = await fetch("http://localhost:3004/books");
     let data = await res.json();
-    displayData(data)
+    displayData(data);
 
-    console.log(data,"data fetched")
- }
- getdata()
+    console.log(data, "data fetched");
+  }
+  getdata();
 
+  function displayData(data) {
+    console.log(data);
+    document.querySelector("tbody").innerHTML = null;
+    data.forEach((e) => {
+      let tr = document.createElement("tr");
 
- function displayData(data){
-    document.querySelector("tbody").innerHTML=null
-    data.forEach(e => {
-        let tr=document.createElement("tr");
+      let td1 = document.createElement("td");
+      let img = document.createElement("img");
+      img.setAttribute("src", e.image_url);
+      td1.append(img);
 
-        let td1 = document.createElement("td");
-        let img=document.createElement("img");
-        img.setAttribute("src",e.image_url)
-        td1.append(img)
+      let td2 = document.createElement("td");
+      td2.innerText = e.book_name;
 
-        let td2 = document.createElement("td");
-        td2.innerText = e.book_name;
+      let td3 = document.createElement("td");
+      td3.innerText = e.author;
 
-        let td3 = document.createElement("td");
-        td3.innerText=e.author;
-        let td4 = document.createElement("td");
-        td4.innerText =e.genre;
-        let td5 = document.createElement("td");
-        td5.innerText =e.edition;
-        let td6 = document.createElement("td");
-        td6.innerText =e.publisher;
-        let td7 = document.createElement("td");
-        td7.innerText =e.cost;
-        let td8 = document.createElement("td");
-        td8.innerText =e.borrowed;
-        let td9 = document.createElement("td");
-        let updbtn=document.createElement("button")
-        updbtn.innerText="Update"
-        td9.append(updbtn)
-        let td10 = document.createElement("td");
-        let del=document.createElement("button")
-        del.innerText="delete"
-        td10.append(del)
+      let td4 = document.createElement("td");
+      td4.innerText = e.genre;
 
+      let td5 = document.createElement("td");
+      td5.innerText = e.edition;
 
-        tr.append(td1,td2,td3,td4,td5,td6,td7,td8,td9,td10);
+      let td6 = document.createElement("td");
+      td6.innerText = e.publisher;
 
-   document.querySelector("tbody").append(tr)
-        
+      let td7 = document.createElement("td");
+      td7.innerText = e.cost;
+
+      let td8 = document.createElement("td");
+      td8.innerText = e.borrowed;
+
+      let td9 = document.createElement("td");
+      let updbtn = document.createElement("button");
+      updbtn.innerText = "Update";
+      updbtn.style.color = "green";
+      updbtn.style.cursor = "pointer";
+      updbtn.addEventListener("click", function () {
+        handleupdate(e.id);
+      });
+      td9.append(updbtn);
+
+      let td10 = document.createElement("td");
+      let del = document.createElement("button");
+      del.innerText = "delete";
+      del.style.color = "red";
+      del.style.cursor = "pointer";
+      del.addEventListener("click", function () {
+        handeldelete(e.id);
+      });
+      td10.append(del);
+
+      tr.append(td1, td2, td3, td4, td5, td6, td7, td8, td9, td10);
+
+      document.querySelector("tbody").append(tr);
     });
+  }
+  async function handeldelete(id) {
+    await fetch(`http://localhost:3004/books/${id}`, { method: "DELETE" });
+  }
 
- }
+  async function handleupdate(id) {
+    document.getElementById("form").style.display="none"
+    let updateForm = document.querySelector(".updateForm");
+    updateForm.style.display = "block";
+    updateForm.addEventListener("submit", updatefunction);
 
+    function updatefunction() {
+      event.preventDefault();
+     
 
+      let obj = {
+        image_url: updateForm.img.value,
+        book_name: updateForm.name.value,
+        author: updateForm.author.value,
+        genre: updateForm.genre.value,
+        edition: updateForm.edition.value,
+        publisher: updateForm.publisher.value,
+        cost: updateForm.cost.value,
+        borrowed: false,
+      };
+      console.log(obj);
+      // alert("alo")
+
+      handlePatch(id, obj);
+    }
+  }
+
+  async function handlePatch(id, data) {
+    console.log("id", id, data);
+
+    fetch(`http://localhost:3004/books/${id}`, {
+      method: "PATCH",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
 </script>

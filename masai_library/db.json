@@ -21,6 +21,50 @@
       "cost": "4342",
       "borrowed": false,
       "id": 2
+    },
+    {
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfHltycDbdBGM1JBXcWUnxvUBcJHAvmk5nmg&usqp=CAU",
+      "book_name": "sairat",
+      "author": "shr",
+      "genre": "history",
+      "edition": "2021",
+      "publisher": "fasfsa",
+      "cost": "4523423",
+      "borrowed": false,
+      "id": 3
+    },
+    {
+      "image_url": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAFwAXAMBIgACEQEDEQH/xAAbAAADAQEBAQEAAAAAAAAAAAAEBQYDAgEHAP/EADYQAAIBAgUBBQYGAgIDAAAAAAECAwQRAAUSITFBBhNRYXEUIjKBkaEjQlKxwfAV0eHxBzNy/8QAGgEAAwADAQAAAAAAAAAAAAAAAgMEAAEFBv/EACQRAAEEAgIBBAMAAAAAAAAAAAEAAgMRBCESMSITQvDxBRRh/9oADAMBAAIRAxEAPwD5xMDEpSeNXjHOoff/AJxutDFS0bMiXNrgD4vLHMTozRrJqITqdx5XHrjmraWoe6EhFFwQOfE4bpGnvZbLJK2kX2mUrcA7DfDXMezwSBmhqdZXkML4S9msxVlOhg2gkPGp3Av1GLQzQigdrKQ9jz064hdI++16nGxMZ8DTxBv52pGWnfR+GSltmHngelpgk8neCxdta3/MNIG3zB/px5R5zS1dXVIrnRrtE1vjAFrj6YcGnqZ6ZVakj7si4WU3uPS2LhKwNBf2vP8A6j5JXNgHIApTSwvW58I4lBWnsir4u1r/AMffD/tJ3RaGljZUMCWhAJLHxI8bnC7IEXJO/aoWMPACWldwsau29yfHraxPG2F2Y9pKOOdTTSIZqi+ucb6QDYD02/na5usguBeekyNwhphNG9/xD5hPUM4WqLFk53vgyEVDwx96wgVVEaqVuSt78HxP7YWAiUFmbY8EnknYetycMqqQ2J31LttgII2usuCLIyZGnxPa9mmEZZe9NrWIVFW/lcDjCmWt0OQJ2S+9lYjHEsNXKNSy6FJuA",
+      "book_name": "apj abdul kalam",
+      "author": "priyaa",
+      "genre": "history",
+      "edition": "2021",
+      "publisher": "shree printer",
+      "cost": "255",
+      "borrowed": false,
+      "id": 4
+    },
+    {
+      "image_url": "",
+      "book_name": "",
+      "author": "",
+      "genre": "",
+      "edition": "",
+      "publisher": "",
+      "cost": "",
+      "borrowed": false,
+      "id": 5
+    },
+    {
+      "image_url": "",
+      "book_name": "",
+      "author": "",
+      "genre": "",
+      "edition": "",
+      "publisher": "",
+      "cost": "",
+      "borrowed": false,
+      "id": 6
     }
   ]
 }
