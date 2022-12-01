@@ -15,6 +15,28 @@
       background-size: cover;
       background-attachment: fixed;
     }
+    #navbar{
+ display: flex;
+ margin-top: 0px;
+ justify-content: space-around;
+ background-color: orange;
+ font-weight: bold;
+ font-size: 32px;
+ padding: 0.5rem;
+}
+#navbar a:hover{
+   color:black;
+}
+#navbar div a{
+ text-decoration: none;
+ color: white;
+   }
+      h1{
+    text-align: center;
+    font-weight: 0px;
+    margin:15 15 15 15;
+    color:white;
+}
     table {
      
       width: 99%;
@@ -53,15 +75,18 @@
     }
   </style>
   <body>
+
+    <navbar id="navbar">
+      <div><a href="./adminlogin.html">LOGIN</a></div>
+      <div><a href="./adashboard.html">Dashboard</a></div>
+    </navbar>
+
     <h1>Admin Dashboard</h1>
     <form id="form">
-      <input type="url" id="img" placeholder="image" /> &nbsp;<input
-        type="text"
-        id="name"
-        placeholder="book name"
-      />
+      <input type="url" id="img" placeholder="image"/> 
+      <input type="text" id="name" placeholder="book name"/>
+      <input type="text" id="author" placeholder="author name"/>
 
-      <input type="text" id="author" placeholder="author name" />
       <select id="genre">
         <option value="">Genre</option>
         <option value="science">Science</option>
@@ -70,12 +95,14 @@
         <option value="tech">Tech</option>
         <option value="business">Business</option>
       </select>
+
       <select id="edition">
         <option value="">Edition</option>
         <option value="2020">2020</option>
         <option value="2021">2021</option>
         <option value="2022">2022</option>
       </select>
+      
       <input type="text" id="publisher" placeholder="Publisher" />
       <input type="number" id="cost" placeholder="Cost" />
       <input type="submit" id="submit" value="submit" />
@@ -84,7 +111,7 @@
     <!-- table -->
     <table>
       <thead>
-        <tr class="table-headers">
+        <tr class="table_headers">
           <th>image</th>
           <th>Book Name</th>
           <th>Author</th>
@@ -103,13 +130,10 @@
     </table>
 
     <form id="form" class="updateForm">
-      <input type="url" id="img" placeholder="image" /> &nbsp;<input
-        type="text"
-        id="name"
-        placeholder="book name"
-      />
-
+      <input type="url" id="img" placeholder="image" /> 
+      <input  type="text" id="name" placeholder="book name"/>
       <input type="text" id="author" placeholder="author name" />
+
       <select id="genre">
         <option value="">Genre</option>
         <option value="science">Science</option>
@@ -167,7 +191,6 @@
     let res = await fetch("http://localhost:3004/books");
     let data = await res.json();
     displayData(data);
-
     console.log(data, "data fetched");
   }
   getdata();
@@ -210,7 +233,9 @@
       updbtn.style.color = "green";
       updbtn.style.cursor = "pointer";
       updbtn.addEventListener("click", function () {
-        handleupdate(e.id);
+        handleupdate(e.id)
+      // table_headers.style.filter="blur(50px)";
+       
       });
       td9.append(updbtn);
 
@@ -237,6 +262,7 @@
     document.getElementById("form").style.display="none"
     let updateForm = document.querySelector(".updateForm");
     updateForm.style.display = "block";
+    table.style.filter= "blur(10px)";
     updateForm.addEventListener("submit", updatefunction);
 
     function updatefunction() {

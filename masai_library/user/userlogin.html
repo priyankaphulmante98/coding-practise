@@ -130,10 +130,13 @@ function loginfunc(e){
     let flag=false
 
    let data= signupData.filter(e=>e.email==obj.email&&e.password==obj.password)
- 
+//  localStorage.setItem("user",JSON.stringify(data[0]))
 // console.log(data,"dsafdsf");
 if(data.length){
-  alert("logged in successfully")
+  console.log("user",data[0])
+  let obj=data[0]
+  alert("logged ")
+  localStorage.setItem("user", JSON.stringify(obj));
   window.location.href="bookpage.html"
 }
 else{
