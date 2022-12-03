@@ -74,6 +74,29 @@
     }
 </style>
 <body>
+
+    <div id="filter">
+
+      <select id="filter_by_genre">
+        <option value="">genre</option>
+        <option value="science">Science</option>
+        <option value="fiction">Fiction</option>
+        <option value="history">History</option>
+        <option value="tech">Tech</option>
+        <option value="business">Business</option>
+      </select>
+
+      <select id="filter_by_cost">
+        <option value="">Cost</option>
+        <option value="lth">Low to high</option>
+        <option value="htl">Hight to Low</option>
+      </select>
+
+      
+    </div>
+
+
+
     <div id="container"></div>
    <div id="modal">
         <div class="bookdata">
@@ -116,6 +139,7 @@
 
 
     console.log(data, "data fetched");
+    return data
   }
   getdata();
 //   console.log("hifdffdf")
@@ -186,8 +210,12 @@ let {image_url, author, book_name, cost, publisher, edition, genre, id }=userdat
     document.getElementById("edition").innerText=userdata.edition+" "+`edition`
 
     document.getElementById("name").innerText= `Borrowed By:`+" "+ user.name
+    var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
 
-    document.getElementById("date").innerText= `Date of Borrow:`+" "+Date.now()
+    document.getElementById("date").innerText= `Date of Borrow:`+" "+dd+"-"+mm+"-"+yyyy;
 
     document.getElementById("cost").innerText= `Toral cost:`+" "+ userdata.cost;
 
@@ -203,12 +231,63 @@ let {image_url, author, book_name, cost, publisher, edition, genre, id }=userdat
         })
 
 
-    let confirm_btn = document.querySelector("#confirm")
+    let confirm_btn = document.querySelector("#confirm");
+    confirm_btn.addEventListener("click", ()=>{
+        handleConfirm(userdata)
+    })
     confirm_btn.style.backgroundColor="blue"
     confirm_btn.style.color="white"
     confirm_btn.style.cursor="pointer"
     confirm_btn.style.padding="5px 10px"
-    
+
+
+    async function handleConfirm(userdata){
+        //got main user object userdata
+        console.log(userdata);
+        modal.style.display="none";
+        container.style.filter= "blur(0px)";
+
+        let updateddata={...userdata,borrowed:!userdata.borrowed}  //updated userdata
+
+
+       fetch(`http://localhost:3004/books/${userdata.id}`,{  //updating json data by patch request
+      method:"PATCH",
+     body: JSON.stringify(updateddata),
+    headers: {"Content-Type": "application/json"
+}  })
+
+// fetch need url sp.id  body to be updated header and method for patch request
+
+    }
+
   }
 
+ let genre = document.getElementById("filter_by_genre")
+ genre.addEventListener("change",  handlefilterbyGenre )
+ async function handlefilterbyGenre(){
+    let val = event.target.value
+    // or
+    // let val =genre.value
+    let data= await getdata() 
+   let sorteddata = data.filter(e=>e.genre==val);
+   displayData(sorteddata)
+   
+    
+}
+ let cost = document.getElementById("filter_by_cost")
+ cost.addEventListener("change",handlefilterbycost )
+
+ async function handlefilterbycost(){
+    let val = event.target.value
+    let data = await getdata()
+    let sortcost;
+    if(val=="lth"){
+
+         sortcost = [...data].sort((a,b ) => a.cost-b.cost );
+    }else{
+         sortcost = [...data].sort((a,b ) => b.cost-a.cost );
+
+    }
+    displayData(sortcost);
+ }
 </script>

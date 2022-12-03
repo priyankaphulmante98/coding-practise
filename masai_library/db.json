@@ -19,7 +19,7 @@
       "edition": "2022",
       "publisher": "niook",
       "cost": "4342",
-      "borrowed": false,
+      "borrowed": true,
       "id": 2
     },
     {
@@ -30,7 +30,7 @@
       "edition": "2020",
       "publisher": "gov  of india",
       "cost": "5000",
-      "borrowed": false,
+      "borrowed": true,
       "id": 5
     },
     {
