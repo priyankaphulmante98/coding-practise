@@ -241,6 +241,7 @@ var yyyy = today.getFullYear();
     confirm_btn.style.padding="5px 10px"
 
 
+
     async function handleConfirm(userdata){
         //got main user object userdata
         console.log(userdata);
@@ -254,10 +255,12 @@ var yyyy = today.getFullYear();
       method:"PATCH",
      body: JSON.stringify(updateddata),
     headers: {"Content-Type": "application/json"
-}  })
+} 
+
+})
 
 // fetch need url sp.id  body to be updated header and method for patch request
-
+window.location.reload();
     }
 
   }
