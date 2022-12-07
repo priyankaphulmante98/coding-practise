@@ -7,18 +7,38 @@
    
 }
 #container img{
-    width: 300px;
-    height: 350px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
    
 }
 #container button{
-    width: auto;
-    padding: 10px 20px;
-}
+    padding: 8px 8px;
+    background-color: rgb(56, 203, 56);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: rgb(17, 19, 16) 0px 8px  24px;
+    
+      }
+#container button:hover{
+    background-color:orange;
+    color:black;
+
+    }
+
 #container div{
     border:1px solid grey;
     padding-bottom: 1rem;
+    background-color: orange;
+    box-shadow: rgb(154, 220, 80) 0px 8px  24px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    
 }
+
 
 
 /* modal */

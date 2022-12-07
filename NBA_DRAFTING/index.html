@@ -8,6 +8,78 @@
     <title>Document</title>
   </head>
   <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      /* background-color: rgba(0, 0, 0, 0.849); */
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy6PzQV15xucoQ3vdnhJGvRXscnqEDxXI44w&usqp=CAU");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    #navbar {
+      display: flex;
+      margin-top: 0px;
+      justify-content: space-around;
+      background-color: orange;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 5px 5px 8px 5px;
+      text-decoration: none;
+      height: 50px;
+    }
+    #navbar a:hover {
+      color: white;
+      text-decoration: none;
+    }
+    #navbar h3 a {
+      text-decoration: none;
+      color: rgb(54, 184, 54);
+    }
+    h3 {
+      text-decoration: none;
+      text-align: center;
+      font-weight: 0px;
+      margin: 15 15 15 15;
+      color: black;
+    }
+    p {
+      color: black;
+    }
+   
+    label {
+      color: black;
+      font-size: 23px;
+    }
+    input[type="text"] {
+      width: 60%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      border-radius: 10px;
+      margin-top: 10px;
+      margin-bottom: 16px;
+      font-size: 20px;
+      box-shadow: rgb(39, 203, 39) 0px 8px  24px;
+    }
+
+    #searchbtn {
+      background-color: rgb(56, 203, 56);
+      color: white;
+      padding: 8px 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 150px;
+      font-size: 23px;
+      margin-left: 50px;
+      margin-top: 10px;
+      box-shadow: rgb(17, 19, 16) 0px 8px  24px;
+   
+    }
+    #searchbtn:hover{
+      background-color:orange;
+      color:rgb(0, 0, 0);
+      box-shadow: rgb(13, 13, 12);
+    }
     .modal {
       position: fixed;
       top: 0;
@@ -19,6 +91,7 @@
       justify-content: center;
       align-items: center;
       display: none;
+      
     }
     .modal .popup {
       width: 50%;
@@ -34,11 +107,31 @@
     }
     .popup .close {
       position: absolute;
-      right: 15px;
-      top: -10px;
-      color: grey;
+      right: 10px;
+      top: -15px;
+      width: 40px;
+      color: white;
+      background-color: red;
+      cursor: pointer;
+      border-radius: 50%;
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+    #teamdetals {
+      background-color: rgb(56, 203, 56);
+      color: white;
+      padding: 8px 8px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      box-shadow: rgb(7, 8, 6) 0px 8px  24px;
+      
+    }
+    #teamdetals:hover{
+      background-color:orange;
+      color:black;
+      box-shadow: rgb(244, 182, 66);
     }
   </style>
   <body>
@@ -49,9 +142,9 @@
       </navbar>
 
       <div>
-        <label for="browser">search players</label>:</label>
-        <input id="search" type="text" placeholder="search by name"/>
-        <button id="searchbtn">search</button>
+        <label for="browser">search players&nbsp; :</label>
+        <input id="search" type="text" placeholder="search by name" />
+        <!-- <button id="searchbtn">search</button> -->
 
         <!-- <datalist id="browsers">
           <option value="Edge"></option>
@@ -62,13 +155,14 @@
         </datalist> -->
       </div>
       <div id="container"></div>
+      
     </div>
 
     <!-- popup -->
     <div id="modal" class="modal">
       <div id="popup" class="popup">
         <img
-          src="data:image/png;base64,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"
+          src="data:image/jpeg;base64,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"
         />
         <h3 id="name">Name:Ron Baker</h3>
         <p id="position">Position:G</p>

@@ -46,7 +46,7 @@ function handlePopup(playerdata) {
   let close = document.querySelector(".close");
   close.addEventListener("click", handleClose);
   console.log(playerdata, "playerdata");
-
+ 
   const {
     first_name,
     last_name,
@@ -77,14 +77,34 @@ function handlePopup(playerdata) {
 }
 
 // search
-let searchbtn = document.getElementById("searchbtn");
-searchbtn.addEventListener("click", handleSearch);
+// let searchbtn = document.getElementById("searchbtn");
+// searchbtn.addEventListener("click", handleSearch);
+
+let input=document.getElementById("search");
+input.addEventListener("input", handleSearch)
 async function handleSearch() {
   let text = document.getElementById("search").value;
-  // console.log(text)
+  console.log(text)
   let data = await getPlayers();
   // console.log(data)
-  let sercheddata = data.filter((e) => e.first_name.toLowerCase() == text.toLowerCase());
-  console.log(sercheddata);
+  let sercheddata = data.filter((e) =>{
+   let name= e.first_name.toLowerCase()
+
+   let searchtext=text.toLowerCase()
+   return name.includes(searchtext)
+  });
+  console.log(sercheddata,"search");
   displayData(sercheddata);
 }
+// console.log(window)
+
+
+
+
+
+// data fetch 
+//login
+//append data
+//filtering
+//sorting
+
