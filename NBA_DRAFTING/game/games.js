@@ -23,7 +23,7 @@ function displayData(arr) {
     heading.style.border="10px solid red"
 
     let sp1 = document.createElement("span");
-    sp1.setAttribute("id", "span");
+    sp1.setAttribute("id", span);
    
   
     

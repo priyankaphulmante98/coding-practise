@@ -55,20 +55,11 @@ function handlePopup(playerdata) {
   } = playerdata;
 
   let name = (document.getElementById("name").innerText = `Name:${first_name}`);
-  let pos = (document.getElementById(
-    "position"
-  ).innerText = `Position:${position}`);
-
+  let pos = (document.getElementById("position").innerText = `Position:${position}`);
   let team = (document.getElementById("team").innerText = `Team:${full_name}`);
-  let abbr = (document.getElementById(
-    "abbr"
-  ).innerText = `Abbr:${abbreviation}`);
-  let conf = (document.getElementById(
-    "conference"
-  ).innerText = `Conference:${conference}`);
-  let div = (document.getElementById(
-    "division"
-  ).innerText = `Division:${division}`);
+  let abbr = (document.getElementById("abbr").innerText = `Abbr:${abbreviation}`);
+  let conf = (document.getElementById("conference").innerText = `Conference:${conference}`);
+  let div = (document.getElementById("division").innerText = `Division:${division}`);
   let cty = (document.getElementById("city").innerText = `City:${city}`);
 
   function handleClose() {
@@ -82,6 +73,7 @@ function handlePopup(playerdata) {
 
 let input=document.getElementById("search");
 input.addEventListener("input", handleSearch)
+
 async function handleSearch() {
   let text = document.getElementById("search").value;
   console.log(text)
