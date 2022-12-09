@@ -1,0 +1,53 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "users": [
+    {
+      "img": "https://i.pravatar.cc/150?img=47",
+      "name": "summiya",
+      "email": "summaiya@gmail.com",
+      "password": "452",
+      "id": 1
+    },
+    {
+      "img": "https://i.pravatar.cc/150?img=14",
+      "name": "SHRIDHAR RAVASAB HAKKE",
+      "email": "shrihakke14@gmail.com",
+      "password": "1234",
+      "id": 2
+    },
+    {
+      "img": "https://i.pravatar.cc/150?img=45",
+      "name": "priya p",
+      "email": "priyareddy@gmail.com",
+      "password": "fsdafsd",
+      "id": 3
+    },
+    {
+      "img": "https://i.pravatar.cc/150?img=66",
+      "name": "pablu",
+      "email": "pabu@g.com",
+      "password": "fd",
+      "id": 4
+    },
+    {
+      "img": "https://i.pravatar.cc/150?img=55",
+      "name": "shree",
+      "email": "s@g.com",
+      "password": "fdsasd",
+      "id": 5
+    }
+  ]
+}
