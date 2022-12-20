@@ -1,11 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-
-
-
-
-
 export function getTodos(){
     return fetch(`http://localhost:3004/Todos`).then(res=>res.json())
    
@@ -35,6 +30,7 @@ export function ToggleTodo(id,data){
         body:JSON.stringify(data)
     })
 }
+
 
 
 
