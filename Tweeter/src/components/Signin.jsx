@@ -23,8 +23,7 @@ function Signin() {
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    if(check(user)){
-      
+    if(check(user)){ 
       alert("login successfull")
 
     }else{
