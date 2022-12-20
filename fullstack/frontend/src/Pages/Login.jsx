@@ -10,8 +10,34 @@ import {
   Stack,
   Image,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import axios from "axios";
+
+const init = {
+  email: "",
+  password: "",
+};
 
 export default function LogicCard() {
+  const [data, setData] = useState(init);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value,
+    });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    console.log(data, "data");
+
+    axios.post("http://localhost:8080/login", data).then((res) => {
+      console.log(res.data, "successfull-login");
+      localStorage.setItem("token", JSON.stringify(res.data.token));
+    });
+  }
   return (
     <Stack minH={"100vh"} direction={{ base: "column", md: "row" }}>
       <Flex p={8} flex={1} align={"center"} justify={"center"}>
@@ -19,11 +45,11 @@ export default function LogicCard() {
           <Heading fontSize={"2xl"}>Sign in to your account</Heading>
           <FormControl id="email">
             <FormLabel>Email address</FormLabel>
-            <Input type="email" />
+            <Input type="email" name="email" onChange={handleChange} />
           </FormControl>
           <FormControl id="password">
             <FormLabel>Password</FormLabel>
-            <Input type="password" />
+            <Input type="password" name="password" onChange={handleChange} />
           </FormControl>
           <Stack spacing={6}>
             <Stack
@@ -34,7 +60,11 @@ export default function LogicCard() {
               <Checkbox>Remember me</Checkbox>
               <Link color={"blue.500"}>Forgot password?</Link>
             </Stack>
-            <Button colorScheme={"blue"} variant={"solid"}>
+            <Button
+              colorScheme={"blue"}
+              variant={"solid"}
+              onClick={(e) => handleSubmit(e)}
+            >
               Sign in
             </Button>
           </Stack>
