@@ -31,6 +31,9 @@ export default function Navbar() {
 
           <Flex alignItems={"center"}>
             <Stack direction={"row"} spacing={7} alignItems={"center"}>
+              <Link to="/todos">
+                <Box>Todos</Box>
+              </Link>
               <Link to="/signup">
                 <Box>Signup</Box>
               </Link>
