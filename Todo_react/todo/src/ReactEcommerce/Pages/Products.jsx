@@ -11,15 +11,15 @@ function Products() {
 
     const [data, setData]  = useState([])
 
-async function GetProducts(){
-    let res = await axios.get (`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products`)
+async function GetProducts({filterby="",page=1,limit=10}){
+    let res = await axios.get(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products?filter=${filterby}&page=${page}&limit=${limit}`)
     // console.log(res.data.data);
     setData(res.data.data)
 }
 console.log(data);
 
 useEffect(() => {
-GetProducts()
+GetProducts({filterby:""})
 },[])
 
   return (

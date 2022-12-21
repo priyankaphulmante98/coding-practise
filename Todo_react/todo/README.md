@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# Mini E-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Instructions
 
-## Available Scripts
+- Use react-router for routing.
+- Use redux and thunk for dispatching asynchronous actions.
+- Keep the code clean, commented and documented. Maintain feature based coding. (separate action and reducers - feature wise folders ) example : all the action and reducer related to authentication in one folder etc.
+- You are free to use any css solutions as long as it looks good. Remember this also has score
 
-In the project directory, you can run:
+# Problem Statement:
 
-### `npm start`
+- Your task is to build a mini e-commerce app where a user can check all available items and able to purchase those.
+- Your app should have following pages with navbar to access all these pages.
+    - Product page `(/)`
+    - Product details page `(/product/:id)`
+    - Cart page `(/cart)`
+    - Orders page `(/orders)`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Product page
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Populate this page using the following API.
+- In Products page, use this API end point to fetch all products and populate on DOM
+    
+    ```jsx
+    [https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products](https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products)
+    ```
+    
+- You can find documentation here
+    - Refer to **`GET`  Get all products with their price**
+    
+    ```jsx
+    [https://documenter.getpostman.com/view/9952810/VUjQmjcF](https://documenter.getpostman.com/view/9952810/VUjQmjcF)
+    ```
+    
+- Display these products in form of cards with following details
+    - brand
+    - title
+    - image
+    - category
+    - price
+- When clicking on any product, move user to product details page, more details about this page will be shown below.
+- You should have only 4 cards per row (use Grid)
+- Your app should have filter and sort functionality
+    - **Filter by category**
+        - Filter according to kids, women, homedecor etc
+        - When clicking on any category, products related to that category should be displayed.
+    - **Sort by price**
+        - High to low
+        - Low to high
+            - Achieve this using `orderBy` param from API itself (check documentation)
+- Your app should also have **pagination**, each page should have 12 items/cards (you can use `limit` param from API)
+- Note that filter and sort functionality should work together.
+    - User should be able to sort according to filtered data.
+- Note that filter and pagination functionality should work together.
+    - Pages should change dynamically according to filtered data.
+- This page should be responsive as well , apply Media Queries
+    - Large screen : Default
+    - Medium screen : 2 cards per row
+    - Small screen : 1 card per row
+- Make sure you make good UI, it will have extra weightage.
 
-### `npm test`
+## Product details page:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- When clicking on any product, move user to product details page, where you will display more info about this product along with some dummy description.
+- User should be able to add to cart from this page.
+- On clicking on `Add to cart`, move that particular product to cart page.
 
-### `npm run build`
+## Cart Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Display all items which was added to cart.
+- User should be able to increment/decrement quantity of items and price should change accordingly.
+- Also display total price along with Delivery charges (50/-)
+- Also create a button `Place order`, on clicking user should be place order with success message alert.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Orders Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Display all orders which user has successfully placed.
 
-### `npm run eject`
+## Note:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Maintain flow of app as mentioned.
+- Error messages should be shown, make use of any CSS library of your choice (chakra and MUI preferred)
+- Use loaders.
+- Good designs will fetch bonus marks.
+- Submitting local host links for mock server will lead to disqualification.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Submission
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Please submit deployed link and Github link of code.
+- **Push your code into `masai-repo`, don’t submit personal repo links (submitting personal repo links will lead to disqualification)**
+- Please double check if deployed version works or not (run deployed version on your laptop and then submit it).
+- Any issues in deployed link, will be considered null and void.
+- Please verify your submissions are correct.
+- Make sure you follow all instructions carefully.
+- Submit before deadline.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Rubrics / Criteria to be judged upon
 
-## Learn More
+- HTML, CSS, React, **Redux**
+- Filtering, sorting, pagination.
+- Code cleanliness.
+- Component structure and ****Good Git Hygiene.****
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Time Limit -  `4 Hours`
