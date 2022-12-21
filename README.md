@@ -1,2 +1,267 @@
 # coding-practise
 PRATICE THE CODE
+
+*********Mock 1-************
+
+Students are required to implement the solution using HTML,CSS and Media queries
+Knowledge of flex, grid, selectors and combinators will be looked into
+Understanding of css is also looked at here
+Pixel perfect design will be looked into
+
+Link: https://saber-columnist-50d.notion.site/Hiroto-ed1f8cfb2bb7472da60371688e4abb76
+
+Round 2  is around Implementation. You will be given some problem statements, for which you will have to think through all the possible cases, figure out the logic and convert in into code. You may not need any specific data structures or any particular algorithm as such, but feel free to use if any of them make your task easy
+
+Link: https://oj.masaischool.com/contest/6251
+Password: 29191
+
+Round 3 will have questions from the following topics
+Arrays
+Strings
+Two Pointers, Sliding Window
+Sorting Algorithms
+
+
+******************  MOCK 2  **********
+
+Mock Assessment-2 
+
+Round 1-
+Students will have to use HTML, CSS, and JS DOM, Local Storage to implement the given functionality.
+There is no need to work with API requests here, everything can be done on their browser.
+Knowledge of Promises and asynchronous js will be looked into.
+You need to be pixel-perfect here and have good aesthetics around solving the problem.
+Usage of CSS will be crucial here, along with some DOM manipulation.
+
+Link: https://saber-columnist-50d.notion.site/Train-Ticket-Booking-196d8e80d49d476a9383ec1255e01ce9
+
+
+Round 2  is around Implementation. You will be given some problem statements, for which you will have to think through all the possible cases, figure out the logic and convert in into code. You may not need any specific data structures or any particular algorithm as such, but feel free to use if any of them make your task easy
+
+Link: https://oj.masaischool.com/contest/6283
+Password: 29191
+
+Link : https://oj.masaischool.com/contest/6288
+Password : 29189
+
+Round 3 will have questions from the following topics
+Arrays
+Strings
+Two Pointers, Sliding Window
+Sorting Algorithms
+
+
+****************************************
+
+Mock Assessment-3 
+Round 1-
+Students will have to use HTML, CSS, and JS DOM, Local Storage to implement the given functionality.
+Knowledge of Promises, fetch and asynchronous js will be looked into.
+You need to be pixel-perfect here and have good aesthetics around solving the problem.
+Usage of CSS will be crucial here, along with some DOM manipulation
+
+Round 2 is around Implementation. You will be given some problem statements, for which you will have to think through all the possible cases, figure out the logic and convert in into code. You may not need any specific data structures or any particular algorithm as such, but feel free to use if any of them make your task easy
+
+Link: https://oj.masaischool.com/contest/6311
+Password: 29192
+
+Round 3 will have questions from the following topics
+Arrays
+Strings
+Two Pointers, Sliding Window
+Sorting Algorithms
+
+********************************************
+
+Mock Assessment-4 
+
+Round 1-
+Students are required to implement CRUD operations using JSON server.
+Knowledge of fetch, promises, DOM, JSON server will be looked into
+Understanding of css is also looked at here.
+Any kind of plagiarism will be having strict actions
+
+Link:  https://saber-columnist-50d.notion.site/Masai-Library-6239ba03afe04877bf580af39d855416
+
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+
+Link: https://oj.masaischool.com/contest/6367
+Password: 22910
+
+Round 3 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+ Backtracking
+
+
+*************************************
+Mock Assessment-5 
+Round 1-
+Students are required to implement the solution using HTML,CSS, React.
+Understanding of networks calls will be looked into.
+Understanding of filtering, sorting will be looked into.
+Understanding of Material UI is also looked at here.
+
+Link: https://saber-columnist-50d.notion.site/Masai-Country-Finder-190f4981ae6446df9116026e35bdc44c
+
+
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+
+Link: https://oj.masaischool.com/contest/6396
+Password: 20100
+
+Round 3 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+ Backtracking
+
+******************************************
+
+Mock Assessment-6 
+
+Round 1-
+Students are required to implement the solution using HTML,CSS, React.
+Understanding of networks calls will be looked into.
+Usage of Redux will be looked into
+Understanding of filtering, sorting ,pagination will be looked into.
+Understanding of Material UI/chakra UI is also looked at here.
+Any kind of plagiarism will be having strict actions
+
+Link: https://saber-columnist-50d.notion.site/Mini-E-commerce-5d8c64d4ed334074a7bb0058180df63b
+
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+
+Link: https://saber-columnist-50d.notion.site/Mini-E-commerce-5d8c64d4ed334074a7bb0058180df63b
+
+Round 3 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+ Backtracking
+
+
+**********************************************
+
+Mock Assessment-7
+
+Round 1-
+Students are required to implement the solution using HTML,CSS, React.
+Understanding of networks calls will be looked into.
+Understanding of pagination, filtering will be looked into.
+Understanding of Problem statement is key here,.
+Any kind of plagiarism will be having strict actions
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+
+Link: https://oj.masaischool.com/contest/6474
+Password: 20100
+ 
+Round 3 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+
+***********************************************
+
+Mock Assessment-8 
+
+Round 1-
+Students are required to implement the solution using HTML,CSS, React.
+Understanding of networks calls, JSON server will be looked into.
+CRUD operations will be looked into.
+
+TWEETER
+Link: https://near-ethernet-088.notion.site/Tweeter-7c4f28dbb48e406186d5ffafec967ede
+
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+
+Link: https://oj.masaischool.com/contest/6504
+Password: 20101
+
+Link: https://oj.masaischool.com/contest/6505
+Password: 20102
+ 
+
+Round 3 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+ Backtracking
+
+
+*************************************************
+
+Mock Assessment-9
+
+Round 1-
+Students are required to implement the solution using HTML,CSS, React.
+
+Link: https://saber-columnist-50d.notion.site/React-Figma-a696f7dab8884e149fe87f36d64c4a3e
+
+Round 2 will have questions from the following topics
+ Arrays
+ Strings
+ Two Pointers, Sliding Window
+ Sorting Algorithms
+ Recursion
+ Backtracking
+ Stacks
+ Queues
+ Backtracking
+
+Link : https://oj.masaischool.com/contest/6616
+Password : 20100
+
+Link: https://oj.masaischool.com/contest/6535
+Password : 20102
