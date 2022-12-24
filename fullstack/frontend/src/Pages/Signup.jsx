@@ -43,7 +43,7 @@ export default function SignupCard() {
 
     axios
       .post("http://localhost:8080/signup", data)
-      .then((res) => console.log(res, "successfull"));
+      .then((res) =>alert("signupd  done"));
   }
 
   return (

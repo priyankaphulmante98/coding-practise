@@ -2,7 +2,8 @@ const { Router } = require("express");
 const todo = require("../models/todo.model");
 
 const app = Router();
-
+const authmiddleware = require("../middlewares/auth.middleware");
+app.use(authmiddleware);
 app.get("/", async (req, res) => {
   try {
     let todos = await todo.find();
@@ -13,8 +14,9 @@ app.get("/", async (req, res) => {
 });
 app.post("/", async (req, res) => {
   try {
-    let todos = await todo.create(req.body);
-    res.send({ message: "todos", data: todos });
+    let new_todo = new todo(req.body);
+    await new_todo.save();
+    res.send({ message: "todos", data: new_todo });
   } catch (e) {
     console.log(e);
   }

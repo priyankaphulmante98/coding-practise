@@ -13,23 +13,22 @@ app.get("/", async (req, res) => {
   }
 });
 app.post("/", async (req, res) => {
-    const { email, password } = req.body;
-    try {
-      const userdata = await signup.findOne({ email, password });
-      if (userdata) {
-        const token = jwt.sign(
-          { id: userdata._id, name: userdata.name },
-          "fullstack123",
-          { expiresIn: "1 day" }
-        );
-        console.log(token)
-        return res.send({message:"Login success", token})
-      }
-      return res.send("invalid creds")
-    } catch (e) {
-      console.log(e);
+  const { email, password } = req.body;
+  try {
+    const userdata = await signup.findOne({ email, password });
+    if (userdata) {
+      const token = jwt.sign(
+        {  id: userdata._id,name:email },
+        "fullstack123",
+        { expiresIn: "1 day" }
+      );
+      console.log(token);
+      return res.send({ message: "Login success", token });
     }
-  });
-  
+    return res.send("invalid creds");
+  } catch (e) {
+    console.log(e);
+  }
+});
 
-module.exports=app
+module.exports = app;
