@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Masai Employee Records</title>
+  </head>
+  <body>
+    <!-- Use this form for taking the inputs  -->
+    <form id="form"> 
+      <input placeholder="Name" type="text" id="name" />
+      <input placeholder="Employee ID" type="text" id="employee_id" />
+      <select id="department">
+        <option value="">Select Department</option>
+        <option value="HR">HR</option>
+        <option value="Finance">Finance</option>
+        <option value="Engineering">Engineering</option>
+      </select>
+      <input placeholder="Experience" type="number" id="experience" />
+      <input placeholder="Email" type="email" id="email" />
+      <input placeholder="Mobile No." type="number" id="mobile" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <!-- Use this select tag for filtering  -->
+    <select id="filter">
+      <option value="">Select Department</option>
+      <option value="HR">HR</option>
+      <option value="Finance">Finance</option>
+      <option value="Engineering">Engineering</option>
+    </select>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Employee ID</th>
+          <th>Department</th>
+          <th>Experience in Years</th>
+          <th>Email</th>
+          <th>Mobile No</th>
+          <th>Role</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Append Rows here using JS & DOM  -->
+      </tbody>
+    </table>
+  </body>
+  <script>
+
+    let form = document.getElementById("form");
+    form.addEventListener("submit", myFunction)
+ 
+
+    let userData = [];
+
+    function myFunction(e){
+      e.preventDefault();
+      
+      
+      let obj ={
+        name:form.name.value,
+        employee_id:form.employee_id.value,
+        department:form.department.value,
+        experience:form.experience.value,
+        email:form.email.value,
+        mobile:form.mobile.value,
+        
+
+      }
+      console.log(obj);
+      userData.push(obj);
+        getData(userData)
+    }
+
+    function getData(data){
+    
+      data?.forEach((e, i) => {
+
+        let tbody = document.querySelector("tbody")
+
+        let  tr = document.createElement("tr");
+
+        let name = document.createElement("td");
+        name.textContent=e.name;
+
+        let Employee_ID = document.createElement("td");
+        Employee_ID.textContent=e.employee_id;
+
+        let Department = document.createElement("td");
+        Department.textContent=e.department;
+
+        let Experience= document.createElement("td");
+       Experience.textContent=e.experience;
+
+        let Email = document.createElement("td");
+         Email.textContent=e.email;
+
+        let Mobile = document.createElement("td");
+        Mobile.textContent=e.mobile;
+
+        let Role = document.createElement("td");
+        // Role.textContent=e.role;
+
+        if(e.experience > 5){
+         Role.textContent="Senior";
+         console.log(e.experience)
+        }else if(e.experience>=2 && e.experience<=5){
+         Role.textContent="Junior";
+        }else if(e.experience<=1){
+         Role.textContent="Fresher";
+        }
+
+        let Delete = document.createElement("td");
+        Delete.textContent="Delete"
+        Delete.addEventListener("click", function(){
+        userData.splice(i, 1)
+        })
+
+        tr.append(name, Employee_ID,Department, Experience, Email, Mobile, Role, Delete)
+        tbody.append(tr);
+
+
+      })
+
+    
+
+
+    }
+
+
+    console.log(userData);
+    
+
+
+  </script>
+</html>
