@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <h1>Home Section</h1>
+        <div>
+            <button id="admin" onclick="adminSection()">Admin</button>
+            <button id="user" onclick="userSection()">User</button>
+        </div>
+       
+    </nav>
+</body>
+</html>
+<script>
+let admin =document.getElementById("admin")
+let user =document.getElementById("user")
+
+const  adminSection = () =>{
+   window.location.href="./page/admin.html"
+}
+
+const  userSection = () =>{
+    window.location.href="./page/user.html"
+}
+
+
+
+</script>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <style>
+      /* Write all necessery css here  */
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .nav{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(255, 255, 255);
+        padding: 1rem;
+        color: rgb(0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .nav a{
+        color: rgb(0, 0, 0);
+       text-decoration: none;
+       font-size: 30px;
+       
+      }
+      #filter{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: auto;
+        margin-top: 20px;
+        padding: 0.5rem;
+        width: 20%;
+        border-radius: 20px;
+      }
+      #product-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        padding: 1rem;
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+        /* border: 1px solid red; */
+        line-height:2vmax;
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <!-- Use this Select Tag for Filtering the Products  -->
+    <select id="filter">
+      <option value="">Filter By Category</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Mobile">Mobile</option>
+      <option value="Speakers">Speakers</option>
+    </select>
+    <div id="product-container">
+      <!-- Here Append All the Products  -->
+    </div>
+  </body>
+  <script>
+    // Write all necessery JS here 
+
+let data
+let container = document.getElementById('product-container')
+
+// https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products
+
+async function getData(){
+  try{
+    let url = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products`
+    let res = await fetch (url)
+     data = await res.json()
+    // console.log(data.data)
+    appendData(data.data)
+  }catch(err){
+    console.log(err)
+  }
+}
+getData()
+
+
+// Append Data
+function appendData(data){
+// console.log(data)
+
+container.innerHTML=null
+
+
+data.forEach((el,i)=> {
+
+let box = document.createElement('div')
+box.style.boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
+box.style.padding='1rem'
+
+let image = document.createElement('img')
+image.src = el.img
+image.style.width='100%'
+
+let brand = document.createElement('h2')
+brand.textContent=el.brand
+
+
+let price = document.createElement('h4')
+price.textContent=`₹ ${el.price}`
+
+let details = document.createElement('p')
+details.textContent=el.details
+
+let category = document.createElement('p')
+category.textContent=el.category
+
+let addtocart = document.createElement('button')
+addtocart.style.backgroundColor='#2AB5F6'
+addtocart.style.padding='0.3rem'
+
+addtocart.textContent='Add To Cart'
+
+
+addtocart.addEventListener('click' , function (){
+  cart(el,el.id)
+})
+
+box.append(image,brand,price,details,category,addtocart)
+container.append(box)
+});
+
+}
+
+
+// Cart function 
+
+let cartitem = JSON.parse(localStorage.getItem('cart')) || []
+function cart(el,id){
+    let item = cartitem.find((el) => {
+      return el.id == id
+    })
+    if (!item) {
+      cartitem.push({...el,quantity:1});
+      alert('Product Added To Cart')
+      localStorage.setItem("cart", JSON.stringify(cartitem));
+    }
+    else {
+      alert("Product Already in Cart")
+    }
+
+
+  }
+
+
+  
+// filtering
+let filter = document.getElementById('filter')
+
+filter.addEventListener("change", fil)
+  function fil(event) {
+    val = event.target.value
+    console.log(val)
+    const x = data.data.filter((el, i) => {
+      return val === el.category
+      
+    })
+    console.log(x)
+    appendData([...x])
+  }
+
+
+
+  </script>
+</html>

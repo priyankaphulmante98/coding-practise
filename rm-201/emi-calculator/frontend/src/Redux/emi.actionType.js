@@ -1,0 +1,3 @@
+export const LOAN_UPDATE ="LOAN_UPDATE"
+export const RATE_UPDATE ="RATE_UPDATE"
+export const TENURE_UPDATE ="TENURE_UPDATE"

@@ -1,0 +1,38 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+#navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: teal;
+    height:60px;
+    width: 100%;
+    align-items: center;
+    color: white;
+}
+#nav a{
+    color: white;  
+}
+#nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+#mobile_list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: auto;
+    width: 100%;
+    gap: 10px;
+    text-align: center;
+}
+.mobile{
+    border: 1px solid greenyellow;
+    margin-top: 20px;
+}
+#sort_filter{
+    text-align: center;
+    margin-top: 20px;
+}

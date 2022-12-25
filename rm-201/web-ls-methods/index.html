@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up Page</title>
+    <style>
+      /* Write all necessery css here  */
+    </style>
+  </head>
+
+  <body>
+    <button id="store-name">Store name to LS</button>
+    <button id="get-name">Get name from LS</button>
+    <h1 id="show-name">
+      <!-- Here Show the Name  -->
+    </h1>
+
+    <button id="store-mob">Store Mobile Num to LS</button>
+    <button id="get-mob">Get Mobile Number from LS</button>
+    <h1 id="show-mob">
+      <!-- Here show the mobile No  -->
+    </h1>
+
+    <button id="store-hobbies">Store Hobbies to LS</button>
+    <button id="get-hobbies">Get Hobbies from LS</button>
+    <h1 id="show-hobbies">
+      <!-- Here show the hobbies  -->
+    </h1>
+
+    <button id="store-students">Store Students to LS</button>
+    <button id="get-students">Get Students from LS</button>
+    <h1 id="show-students">
+      <!-- Here show students  -->
+    </h1>
+  </body>
+  <script>
+    // Write all necessery JS here 
+
+    // Name
+    let storeName = document.getElementById('store-name')
+    let getName = document.getElementById('get-name')
+    let showName = document.getElementById('show-name')
+
+    storeName.onclick=stn
+    function stn(){
+      let str = "Masai School"
+      localStorage.setItem('username',(str))
+    }
+    getName.onclick=gtn
+    function gtn(){
+      let getN=localStorage.getItem('username')
+      let x  = getN
+      showName.textContent=x
+    }
+
+
+
+
+
+    //  Mobile
+    let storeMobile = document.getElementById('store-mob')
+    let getMobile = document.getElementById('get-mob')
+    let showMobile = document.getElementById('show-mob')
+
+
+    storeMobile.onclick=stm
+    function stm(){
+      let num = 999999999
+      localStorage.setItem('mobile',JSON.stringify(num))
+    }
+    getMobile.onclick=gtm
+    function gtm(){
+      let getM=JSON.parse(localStorage.getItem('mobile'))
+      let y = getM
+      showMobile.textContent=y
+    }
+
+
+    // Hobbies
+    let storeHobbiesName = document.getElementById('store-hobbies')
+    let getHobbies = document.getElementById('get-hobbies')
+    let ShowHobbies = document.getElementById('show-hobbies')
+
+    storeHobbiesName.onclick=sth
+    function sth(){
+      let hobbies = ['cricket','music']
+      localStorage.setItem('my_hobbies',JSON.stringify(hobbies))
+    }
+    getHobbies.onclick=gth
+    function gth(){
+      let getH = JSON.parse(localStorage.getItem('my_hobbies'))
+      let x=getH.join('/')   
+      ShowHobbies.textContent=x
+    }
+
+
+
+    // Student.
+    let storeStudent = document.getElementById('store-students')
+    let getStudent = document.getElementById('get-students')
+    let showStudent = document.getElementById('show-students')
+
+    storeStudent.onclick=sts
+    function sts(){
+      let students =[
+        {"name":"Nrupul",place:"Banglore"},
+        {"name":"Prateek",place:"Mumbai"}
+      ]
+      localStorage.setItem('students',JSON.stringify(students))
+    }
+    getStudent.onclick=gts
+    function gts(){
+      let getS = JSON.parse(localStorage.getItem('students'))
+      
+      let na = []
+      getS.forEach(element => {
+        na.push(element.name)
+      });
+      let x=na.join('/');
+      showStudent.textContent=x
+    
+    }
+  </script>
+</html>

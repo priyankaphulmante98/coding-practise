@@ -17,9 +17,9 @@ app.use("/todos",todoRoute)
 app.get('/', (req, res) => res.send('hello'))
 
 app.listen(8080, async () => {
-    await connect();
-    console.log("mongodb connected");
-    try {
+  try {
+      await connect();
+      console.log("mongodb connected");
     } catch (e) {
       console.log(e);
     }

@@ -1,0 +1,7 @@
+.bigContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    border: 1px solid red;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,741 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    /* border: 1px solid red; */
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    gap: 50px;
+    list-style-type: none;
+    margin: auto;
+    padding: 0;
+    /* border: 1px solid red; */
+    margin: 2px;
+    padding: 3px;
+    overflow: hidden;
+
+}
+
+nav ul li {
+    margin: auto;
+    padding: 0;
+    float: left;
+    padding: 8px;
+    text-align: center;
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+nav ul a:hover {
+    color: orange;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+
+}
+
+#book-button {
+    margin: auto;
+    padding: 1rem 2.8rem 1rem 2.8rem;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+
+
+}
+
+nav>div {
+    margin: auto;
+}
+
+/* About Us */
+.hero_flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+    /* border: 1px rgb(255, 0, 187) solid; */
+}
+
+.hero_flex>div {
+    padding: 1rem;
+    margin: auto;
+}
+
+.hero_flex>div>h3 {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    color: rgb(233, 173, 40);
+    font-size: 20px;
+
+}
+
+.hero_flex>div>h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    font-size: 42px;
+    line-height: 45px;
+    font-weight: bold;
+}
+
+.hero_flex>div>p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    margin-left: 40px;
+}
+
+.hero_flex>div>img {
+    margin-left: 40px;
+}
+
+.hero_grid {
+    /* border: solid 1px red; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hero_grid>div {
+    /* border: 1px rgb(47, 255, 0) solid; */
+    margin-top: 20px;
+    padding: 1rem 3rem;
+    margin-bottom: 20px;
+    line-height: 30px;
+
+}
+
+
+
+@media all and (min-width:451px) and (max-width:750px) {
+    .hero_flex {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .hero_flex>div {
+        /* border: 1px rgb(37, 25, 208) solid; */
+        width: auto;
+        /* margin: auto; */
+        line-height: 30px;
+    }
+    .hero-flex-content{
+        width: auto;
+        
+    }
+    .hero-flex-content img {
+        width: 100%;
+        /* border: 1px solid rgb(0, 255, 55); */
+    }
+
+    .hero_flex>div>img {
+        width: auto;
+        /* border: 1px solid orange; */
+    }
+
+    .hero_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hotel-image-div {
+        /* border: 1px red solid; */
+        align-items: center;
+        text-align: center;
+
+    }
+
+    .hero_grid>div {
+        /* border: 1px rgb(47, 255, 0) solid; */
+        margin-top: 20px;
+        margin-left: 10px;
+        line-height: 25px;
+    }
+
+}
+
+/*  small screen */
+@media all and (min-width:100px) and (max-width:450px) {
+    .hero_flex {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+
+    .hero_flex>div {
+        /* border: 1px rgb(37, 25, 208) solid; */
+        width: 80%;
+        margin: auto;
+        line-height: 30px;
+        text-align: left;
+    }
+
+    .hero_grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hotel-image-div {
+        /* border: 1px red solid; */
+        align-items: center;
+        text-align: center;
+        margin: auto;
+    }
+
+    .hotel-image-div>img {
+        width: 80%;
+    }
+
+    .hero_flex>div>h3 {
+        /* margin-bottom: 20px; */
+        color: rgb(233, 173, 40);
+        font-size: 10px;
+
+    }
+
+    .hero_flex>div>h1 {
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .hero_flex>div>p {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+/* Expolore hotel */
+.explor-hotel {
+    margin-top: 40px;
+    /* border: 1px solid red; */
+    padding-bottom: 50px;
+    padding-top: 40px;
+}
+
+.hotel-room-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    height: 600px;
+    /* border: 1px solid red; */
+}
+
+.hotel-room-heading {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.hotel-room-heading p {
+    color: rgb(233, 173, 40);
+    font-weight: bold;
+    margin-top: 40px;
+    font-size: 20px;
+    font-stretch: semi-expanded;
+}
+
+.hotel-room-heading h1 {
+    font-stretch: semi-expanded;
+    margin-top: 40px;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+
+.delux-room-one {
+    background-image: url('https://preview.colorlib.com/theme/hiroto/img/home-room/hr-1.jpg.webp');
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto;
+    background-size: 420px 600px;
+    font-size: 25px;
+
+}
+
+.delux-room-two {
+    background-image: url('https://preview.colorlib.com/theme/hiroto/img/home-room/hr-2.jpg.webp');
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 25px;
+    height: auto;
+    background-size: 420px 600px;
+}
+
+.delux-room-three {
+    background-image: url('https://preview.colorlib.com/theme/hiroto/img/home-room/hr-3.jpg.webp');
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 25px;
+    height: auto;
+    background-size: 420px 700px;
+}
+
+.delux-room-four {
+    background-image: url('https://preview.colorlib.com/theme/hiroto/img/home-room/hr-4.jpg.webp');
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: auto;
+    background-size: 420px 600px;
+    font-size: 25px;
+   
+}
+
+/* large screen */
+@media all and (min-width:451px) and (max-width:750px) {
+    .hotel-room-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        height: 1000px;
+        border: 1px solid red;
+        margin-top: 20px;
+    }
+}
+
+/* small screen */
+@media all and (min-width:100px) and (max-width:450px) {
+    .hotel-room-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 15px;
+        height: 2000px;
+        border: 1px solid red;
+        margin-top: 20px;
+    }
+}
+
+
+/*  Our Gallery*/
+.our-gallery-big-container{
+    /* border: 1px solid red; */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.our-gallery-container{
+    /* border: 1px solid rgb(0, 38, 255);/ */
+    margin: auto;
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    padding: 3rem 0rem 3rem 0rem;
+}
+.gallery-first-div{
+    /* border: 1px solid rgb(0, 38, 255); */
+    padding: 1rem;
+    margin: auto;
+    font-size: 25px;
+    width: 40%;
+    
+}
+.gallery-first-div h3{
+    color:rgb(233, 173, 40) ;
+    padding: 0.5rem;
+}
+.gallery-sec-div{
+    /* border: 1px solid rgb(0, 38, 255); */
+    padding: 1rem;
+    margin:10px auto;
+    width: 40%;
+    font-size: 20px;
+}
+.gallery-sec-div p{
+    margin-bottom: 20px;
+    color: grey;
+}
+.view-gallery-button{
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgb(233, 173, 40);
+    color: white;
+    border: none;
+}
+.image-slide-div{
+    display: grid;
+   grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    width: 100%;
+}
+.image-slide-div img{
+    width: 100%;
+    height: 430px;
+}
+.fa-solid{
+    margin-left: 10px;
+}
+
+/* medium screen */
+@media all and (min-width:451px) and (max-width:750px){
+    .our-gallery-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        text-align: left;
+        padding: 3rem 0rem 3rem 0rem;
+    }
+    .gallery-first-div{
+        font-size: 20px;
+        width: 90%;
+        
+    }
+    .gallery-sec-div{
+        width: 90%;
+        font-size: 15px;
+    }
+    .image-slide-div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+        width: 100%;
+        height: auto;
+    }
+    .image-slide-div img{
+        width: 100%;
+        height: 400px;
+    }
+}
+/* small screen */
+@media all and (min-width:100px) and (max-width:450px){
+    .our-gallery-container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        text-align: left;
+        padding: 3rem 0rem 3rem 0rem;
+    }
+    .gallery-first-div{
+        font-size: 15px;
+        width: 90%;
+        
+    }
+    .gallery-sec-div{
+        width: 90%;
+        font-size: 15px;
+    }
+    .image-slide-div{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+        width: 100%;
+        height: auto;
+    }
+    .image-slide-div img{
+        width: 100%;
+        height: 400px;
+    }
+    .view-gallery-button{
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: 15px;
+        font-weight: bold;
+        background-color: rgb(233, 173, 40);
+        color: white;
+        border: none;
+    }
+}
+
+
+
+
+
+
+/* Our Blog */
+
+.our_blog_heading {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  
+  .grid_box {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    width: 80%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    margin: auto;
+  }
+  .hotel_img {
+    object-fit: cover;
+    width: 100%;
+  }
+ .hotel_desc {
+    margin: 34px;
+  }
+  
+  button {
+    background-color: #e9ad28; 
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+
+  @media all and (min-width:451px) and (max-width:750px){
+    .grid_box {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+      }
+      .our_blog_heading {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 20px;
+      }
+  }
+  @media all and (min-width:100px) and (max-width:450px){
+    .grid_box {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        align-items: center;
+        width: 100%;
+        margin: auto;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+      .our_blog_heading {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 20px;
+      }
+      .hotel_img {
+        object-fit: cover;
+        width: 100%;
+      }
+      .hotel_desc {
+        margin: 0;
+      }
+  }
+
+
+
+  /* Footer */
+  #footer_main {
+    height: 500px;
+    width: 100%;
+    justify-content: space-between;
+    background-color: gray;
+   background: url("https://preview.colorlib.com/theme/hiroto/img/footer-bg.jpg.webp");
+ }
+ 
+ #logo_of_brands{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+ }
+ 
+ #footer_flex{
+     display: flex;
+     margin:80px 0px;
+     justify-content: space-evenly;
+     padding-top: 2rem;
+ }
+ 
+ #footer_desc{
+     width: 170px;
+     height: auto;
+ }
+ #second_div{
+     gap: 20px;
+     display: flex;
+ }
+ #input{
+     height: 33px;
+     width: 180px;
+ }
+ #small_logo{
+     display: flex;
+     gap: 10px;
+ }
+ #first_div{
+     width: 20%;
+
+ }
+ #second_div{
+
+ }
+ #third_div{
+     width: 40%;
+ }
+ #white{
+     color: white;
+ }
+ #gray{
+     color: gray;
+ }
+
+ @media all and (min-width:451px) and (max-width:750px){
+    #footer_main {
+        height: auto;
+        width: 100%;
+        justify-content: space-between;
+        background-color: gray;
+       background: url("https://preview.colorlib.com/theme/hiroto/img/footer-bg.jpg.webp");
+     }
+     
+     #logo_of_brands{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+     }
+     
+     #footer_flex{
+         display: grid;
+         grid-template-columns: repeat(2,1fr);
+         gap: 20px;
+     }
+     
+     #footer_desc{
+
+         height: auto;
+         width: 100%;
+         margin-top: 50px;
+     }
+     #second_div{
+        width: 100%;
+         gap: 20px;
+         display: flex;
+     }
+     #input{
+         height: 33px;
+         width: 100%;
+     }
+     #small_logo{
+         display: flex;
+         gap: 10px;
+     }
+     #first_div{
+         width: 100%;
+     }
+     #second_div{
+        width: 100%;
+     }
+     #third_div{
+         width: 100%;
+
+     }
+
+     #white{
+         color: white;
+     }
+     #gray{
+         color: gray;
+     }
+    
+  }
+
+  @media all and (min-width:100px) and (max-width:450px){
+    #footer_main {
+        height: auto;
+        width: 100%;
+        margin: auto;
+        justify-content: space-between;
+        background-color: gray;
+       background: url("https://preview.colorlib.com/theme/hiroto/img/footer-bg.jpg.webp");
+     }
+     
+     #logo_of_brands{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+     }
+     
+     #footer_flex{
+         display: grid;
+         grid-template-columns: repeat(1,1fr);
+         gap: 20px;
+     }
+     
+     #footer_desc{
+         height: auto;
+         width: 100%;
+         margin-top: 50px;
+     }
+     #second_div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+
+     }
+     #input{
+         height: 33px;
+         width: 95%;
+         margin-bottom: 20px;
+     }
+     #small_logo{
+         display: flex;
+         gap: 10px;
+     }
+     #first_div{
+         width: 100%;
+     }
+     #second_div{
+        width: 100%;
+     }
+     #third_div{
+         width: 100%;
+
+     }
+
+     #white{
+         color: white;
+     }
+     #gray{
+         color: gray;
+         width: 20%;
+         font-size: 15px;
+     }
+
+    
+  }
