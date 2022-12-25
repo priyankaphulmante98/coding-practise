@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+  <nav>
+    <button> <a href="../index.html">Home-Section </a></button>
+    <button> <a href="./registration.html">Register-Form-Section</a> </button>
+    <button> <a href="./booking.html">Booking-Section</a> </button>
+  </nav>
+ 
+    <div id="filter_sort">
+        <div>
+          <label for="">Filter By seat</label>
+          <br />
+          <select name="" id="filterby_seat">
+            <option value="">select seat</option>
+            <option value="acfirstclass">ac</option>
+            <option value="general">general</option>
+            <option value="secondclass">sec</option>
+            <option value="sleeperclass">sleeper</option>
+          </select>
+        </div>
+  
+        <div>
+          <label for="">Sort By date</label>
+          <br />
+          <select name="" id="date">
+            <option value="">select order</option>
+            <option value="inc">Increasing</option>
+            <option value="dec">Decresing</option>
+          </select>
+        </div>
+  
+        <div>
+          <label for="">Sort By Age</label>
+          <br />
+          <select name="" id="age">
+            <option value="">select order</option>
+            <option value="inc">Low to High</option>
+            <option value="dec">High To Low</option>
+          </select>
+        </div>
+      </div>
+    <section>
+        <table>
+          <thead>
+            <tr class="table-headers">
+              <th>Name</th>
+              <th>age</th>
+              <th>From Station</th>
+              <th>To Station</th>
+              <th>Date</th>
+              <th>Seat</th>
+              <th>OTP</th>
+              <th>Delete</th>
+              <th>Reject</th>
+              <th>Confirm</th>
+
+            </tr>
+  
+          </thead>
+          <tbody id="tbody">
+          <!-- Append Code Here -->
+          </tbody>
+        </table>
+      </section>
+</body>
+</html>
+<script src="../script/dashboard.js"></script>

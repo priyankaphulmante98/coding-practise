@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/dashboard.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="container">
+        <div id="form-div">
+            <h1>DashBoard Section</h1>
+            <form>
+            <input type="url" placeholder="Enter Image Url" id="image"><br><br>
+            <input type="text" placeholder="Enter Book Name" id="book"><br><br>
+            <input type="text" placeholder="Enter Author Name" id="author"><br><br>
+            <select id="genre">
+                <option value="">Genre</option>
+                <option value="science">Science</option>
+                <option value="fiction">Fiction</option>
+                <option value="history">History</option>
+                <option value="tech">Tech</option>
+                <option value="business">Business</option>
+            </select>
+            <select id="edition">
+                <option value="">Edition</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+            </select><br><br>
+            <input type="text" placeholder="Enter Publisher" id="publisher"><br><br>
+            <input type="number" placeholder="Enter Cost " id="cost"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+
+        <div id="data-div">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Gener</th>
+                        <th>Edition</th>
+                        <th>Publisher</th>
+                        <th>Cost</th>
+                        <th>Borrowed</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+            <!-- append data -->
+                </tbody>
+            </table>
+            
+        </div>
+
+
+        
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="form-div">
+                    <form id="form2">
+                        <input type="url" placeholder="Enter Image Url" id="image"><br><br>
+                        <input type="text" placeholder="Enter Book Name" id="book"><br><br>
+                        <input type="text" placeholder="Enter Author Name" id="author"><br><br>
+                        <select id="genre">
+                            <option value="">Genre</option>
+                            <option value="science">Science</option>
+                            <option value="fiction">Fiction</option>
+                            <option value="history">History</option>
+                            <option value="tech">Tech</option>
+                            <option value="business">Business</option>
+                        </select>
+                        <select id="edition">
+                            <option value="">Edition</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                        </select><br><br>
+                        <input type="text" placeholder="Enter Publisher" id="publisher"><br><br>
+                        <input type="number" placeholder="Enter Cost " id="cost"><br><br>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+               
+            </div>
+
+        </div>
+    </div>
+    
+
+
+
+
+
+</body>
+</html>
+<script src="../script/dashboard.js"></script>

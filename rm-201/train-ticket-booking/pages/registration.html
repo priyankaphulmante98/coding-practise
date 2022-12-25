@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/registration.css">
+    <title>Registration</title>
+</head>
+<body>
+    <button><a href="../index.html">Home</a></button>
+    <div class="container">
+      <h1>Register Form</h1>
+        <form>
+      
+          <label>Unique ID:</label>
+          <input type="number" id="uniqueid" placeholder="Your name.." required>
+      
+          <label >Name</label>
+          <input type="text" id="name" placeholder="Your Name..">
+
+          <label >Age</label>
+          <input type="number" id="age" placeholder="Your Age..">
+
+          <label >From Station:</label>
+          <select id="fromstation">
+            <option value=""></option>
+            <option value="banglore">Banglore</option>
+            <option value="pune">Pune</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+          </select>
+
+          <label >To Station:</label>
+          <select id="tostation">
+            <option value=""></option>
+            <option value="banglore">Banglore</option>
+            <option value="pune">Pune</option>
+            <option value="hyderabad">Hyderabad</option>
+            <option value="delhi">Delhi</option>
+            <option value="mumbai">Mumbai</option>
+          </select>
+      
+          <label>Journey Date: </label>
+          <input type="date" id="date">
+          <br>
+          <label >Seat Type:</label>
+          <select id="seat">
+            <option value=""></option>
+            <option value="acfirstclass">AC First Class</option>
+            <option value="sleeperclass">Sleeper Class</option>
+            <option value="secondclass">Second Class</option>
+            <option value="general">General</option>
+          </select>
+      
+          <input type="submit"id="button" value="Register Button"/>
+      
+        </form>
+      </div>
+</body>
+</html>
+<script src="../script/registration.js"></script>
