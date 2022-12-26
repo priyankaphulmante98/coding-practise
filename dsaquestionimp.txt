@@ -1,0 +1,12 @@
+1] palindrome
+2] prime number
+3] decipher string
+4] cypher string 
+5] subarray substring geretion
+6] subaaray less then M 
+7] sprial traversal
+8[ N traversal
+9] reverse N traversal 
+10] paranthsis 
+11] factorial Number
+12] largest palindrome substring

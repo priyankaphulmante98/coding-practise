@@ -1,8 +1,8 @@
 import React from 'react'
 import  axios  from 'axios';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {useState, useEffect } from 'react';
-import {Box, Text, Image} from "@chakra-ui/react"
+import {Box, Text, Image, Button} from "@chakra-ui/react"
 
 
 
@@ -11,6 +11,9 @@ function SingleProduct() {
 
 const params =useParams()
 const [data, setData] = useState({})
+
+const navigate =useNavigate()
+
 
 
 // let nobj={
@@ -27,11 +30,36 @@ const [data, setData] = useState({})
   setData(res.data.data)
   
  }
- console.log(data)
+//  console.log(data)
 
  useEffect((e) => {
   HandleGetData()
+ 
+
  },[])
+
+ 
+ function AddToCart(){
+  let cart = JSON.parse(localStorage.getItem('cart'))||[]
+ let localdata =  cart.filter((e) =>{
+   return e.id==data?.id
+  })
+
+  if(localdata.length==0){
+ cart.push({
+        ...data, 
+        quantity:1
+      })
+      localStorage.setItem('cart', JSON.stringify(cart))
+      alert("data added")
+      navigate('/cart')
+  }else{
+    alert("data already exsts")
+  }
+
+ }
+
+
 
   return (
     <Box>
@@ -41,6 +69,7 @@ const [data, setData] = useState({})
         <Text>{data.brand}</Text>
         <Text>{data.price}</Text>
         <Text>{data.category}</Text>
+        <Button onClick={AddToCart}>ADD TO CART</Button>
 
      
      

@@ -175,6 +175,7 @@
   </body>
 </html>
 <script>
+
   let form = document.getElementById("form");
   form.addEventListener("submit", addfunction);
 
@@ -195,6 +196,8 @@
     // alert("alo")
     PostBook(obj);
   }
+   
+  
   async function PostBook(bdata) {
     let res = await fetch("http://localhost:3004/books", {
       method: "POST",
@@ -219,13 +222,14 @@
     console.log(data);
     document.querySelector("tbody").innerHTML = null;
     data.forEach((e) => {
+      
       let tr = document.createElement("tr");
 
       let td1 = document.createElement("td");
       let img = document.createElement("img");
       img.setAttribute("src", e.image_url);
       td1.append(img);
-
+ 
       let td2 = document.createElement("td");
       td2.innerText = e.book_name;
 

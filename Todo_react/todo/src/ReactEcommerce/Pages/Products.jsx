@@ -25,6 +25,8 @@ function Products() {
   const [order, setOrder] = useState("asc");
   const [totalpages, setTotalPages] =useState(data.totalPages|| 4)
 
+
+  // const [ cart, setCart] = useState([])
   async function GetProducts({ limit, filterBy, sortBy, order, page }) {
     // https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products?limit=10&filter=women&sort=price&order=desc
     let res = await axios.get(
@@ -41,6 +43,8 @@ function Products() {
     GetProducts({ limit, filterBy, sortBy, order, page });
   }, [limit, filterBy, sortBy, order, page]);
 
+
+  
   return (
     <Box as='center'>
       <Box m={"2rem 0"}>
