@@ -18,3 +18,8 @@
 18] merge sort 
 19] custom sort
 20] bubble sort 
+
+# leetcode ==>
+1] plusOne  ==> solve
+2] 2D Search matrix  ==> solve
+3] valid paranthseis ==> solve
