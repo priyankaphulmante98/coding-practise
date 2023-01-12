@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Page</title>
+    <style>
+      /* Write all necessery css here  */
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .nav{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(255, 255, 255);
+        padding: 1rem;
+        color: rgb(0, 0, 0);
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      .nav a{
+        color: rgb(0, 0, 0);
+       text-decoration: none;
+       font-size: 30px;
+       
+      }
+      #total{
+        text-align: center;
+        margin: auto;
+      }
+      #cart-container{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 10px;
+        padding: 1rem;
+        width: 95%;
+        margin: auto;
+        margin-top: 20px;
+        /* border: 1px solid red; */
+        line-height:2vmax;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <h1>Masai E-Commerce</h1>
+      <a href="./index.html">Home</a>
+      <a href="./cart.html">Cart</a>
+    </div>
+    <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+    <div id="cart-container">
+      <!-- Here Append All the cart Products  -->
+    </div>
+  </body>
+  <script>
+    // Write all necessery JS here 
+let container = document.getElementById('cart-container')
+
+let total = document.getElementById('total')
+
+let cartTotal = document.getElementById('cart-total')
+
+let cartitem = JSON.parse(localStorage.getItem('cart')) || []
+
+// console.log(cartitem)
+
+cartData(cartitem)
+function cartData(cartitem){
+
+  container.innerHTML=null
+
+  cartitem.forEach((el,i)=> {
+
+  let box = document.createElement('div')
+  box.style.boxShadow='rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
+  box.style.padding='1rem'
+
+  let image = document.createElement('img')
+  image.src = el.img
+  image.style.width='100%'
+
+  let brand = document.createElement('h2')
+  brand.textContent=el.brand
+
+
+  let price = document.createElement('h4')
+  price.textContent=`₹ ${el.price}`
+
+  let details = document.createElement('p')
+  details.textContent=el.details
+
+  let category = document.createElement('h2')
+  category.textContent=`Category:- ${el.category}`
+
+
+
+  let div = document.createElement('div')
+  div.style.display='flex'
+  div.style.gap='10px'
+  div.style.marginTop='10px'
+  
+
+  let inc =  document.createElement('button')
+  inc.style.padding='0.3rem'
+  inc.textContent='+'
+  inc.addEventListener('click',function(){
+    incre(el,el.id)
+  })
+  
+  let span =document.createElement('span')
+  span.textContent = el.quantity
+
+
+  let dec =  document.createElement('button')
+  dec.textContent='-'
+  dec.style.padding='0.3rem'
+  dec.addEventListener('click',function(){
+    decre(el,el.id)
+  })
+
+  let removebutton = document.createElement('button')
+  removebutton.textContent='Remove'
+  removebutton.addEventListener('click' , function (){
+    remove(el,i)
+  })
+
+  
+  div.append(inc,span,dec,removebutton)
+  box.append(image,brand,price,details,category,div)
+  container.append(box)
+  });
+
+}
+
+// increament function
+function incre(el,id){
+  let cart_Quantity = cartitem.map((el)=>{
+      if(el.id==id){
+        return {...el,quantity:el.quantity++}
+      }
+      else return el
+    })
+  localStorage.setItem("cart",JSON.stringify(cart_Quantity));
+  cartData(cart_Quantity);
+  totalPrice(cart_Quantity)
+}
+
+
+// decreament function
+function decre(el,id){
+  let cart_Quantity=cartitem.map((el)=>{
+      if(el.id==id){
+        return {...el,quantity:el.quantity--}
+      }
+      else return el
+    })
+  localStorage.setItem("cart",JSON.stringify(cart_Quantity));
+  cartData(cart_Quantity);
+  totalPrice(cart_Quantity)
+}
+
+// remove function
+function  remove(el,i){
+  cartitem.splice(i,1)
+  localStorage.setItem('cart',JSON.stringify(cartitem))
+  cartData(cartitem)
+  totalPrice(cartitem)
+}
+
+// totla price 
+function totalPrice(data){
+    let total_price=data.reduce((acc,el)=>{
+      return acc+el.quantity*el.price;
+    },0)
+    cartTotal.textContent=total_price;
+  }
+  totalPrice(cartitem)
+
+
+  </script>
+</html>

@@ -19,7 +19,6 @@ function myfunc(e){
 if(age<18||age>=40){
     alert("age should be 18 to 40");
    
-
 }   
 else{
 

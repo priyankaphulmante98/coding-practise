@@ -3,7 +3,7 @@ let form = document.querySelector('form')
 
 
 
-async function formAdd(){
+async function formAdd(event){
     event.preventDefault()
     let dogObj = {
         name:form.name.value,

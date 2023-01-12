@@ -2,8 +2,8 @@ let form = document.querySelector('form')
 
 // https://reqres.in/api/login
 
-const userData = async() =>{
-    event.preventDefault()
+const userData = async(e) =>{
+    e.preventDefault()
     let user = {
         email:form.email.value,
         password:form.password.value
