@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            font-size:larger
+        }
+  
+        
+        #nav{
+            border:3px solid red;
+            padding:10px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: orange;
+            
+        }
+        .link{
+
+            display:flex;
+            /* border: 2 px solid red; */
+            justify-content: space-around;
+            text-decoration: none;
+            gap:30px;
+            list-style: none;
+         
+        }
+        .link a{
+            text-decoration: none;
+        }
+        /* .link ul li a{
+            text-decoration:none;
+            list-style-type: none;
+          } */
+         
+          .menu span{
+            color: black;
+            height:3px;
+            width:20px;
+            border: 1px solid  black;
+             margin:3px;
+             display: flex;
+             flex-direction: column;
+            background-color: black;
+            
+          }
+          .menu {
+            display:none;
+          }
+    
+ @media screen and (max-width: 760px) {
+
+   .menu{
+    display: block;
+    }  
+    #nav ul{
+    display:none;
+}
+}
+
+
+    </style>
+
+</head>
+<body>
+    
+        <nav  id="nav">
+            <div id="logo">
+           Logo
+            </div>
+            <ul class="link">
+                <li><a href="">home</a></li>
+                <li><a href="">about</a></li>
+                <li><a href="">career</a></li>
+                <li><a href="">service</a></li>
+            </ul>
+
+            <div class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    
+
+
+
+</body>
+</html>
