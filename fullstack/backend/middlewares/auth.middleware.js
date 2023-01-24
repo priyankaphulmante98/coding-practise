@@ -8,7 +8,7 @@ const auth = (req, res, next) => {
     }
 
     req.body.userId = decoded.id;
-    console.log(decoded,"decoded")
+    console.log(decoded, "decoded");
     next();
   });
 };
