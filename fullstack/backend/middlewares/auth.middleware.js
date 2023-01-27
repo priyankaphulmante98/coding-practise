@@ -8,9 +8,9 @@ const auth = (req, res, next) => {
     }
 
     req.body.userId = decoded.id;
-    console.log(decoded, "decoded");
+    console.log(decoded, "decoded user details" );
     next();
   });
 };
 
-module.exports = auth;
+module.exports = auth; 
