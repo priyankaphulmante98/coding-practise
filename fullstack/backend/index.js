@@ -7,8 +7,8 @@ const todoRoute = require('./routes/todo.route')
 const connect = require('./config/db')
 
 app.use(express.urlencoded({extended: true}))
+app.use(cors())  
 app.use(express.json())
-app.use(cors())  // run frnt bckd at same local port
 app.use("/signup",signupRoute)
 app.use("/login",loginRoute)
 app.use("/todos",todoRoute)

@@ -39,8 +39,8 @@ function Signup() {
     }
 
     return (
-        <Flex  align="center" justify="center" h="100vh">
-            <Box  p={6} rounded="md">
+        <Flex bg="gray.100" align="center" justify="center" h="100vh">
+            <Box bg="white" p={6} rounded="md">
                 <form onSubmit={handleSubmit}>
                     <VStack spacing={4} align="flex-start">
                         <FormControl>

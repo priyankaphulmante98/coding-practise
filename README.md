@@ -1,3 +1,3 @@
 # coding-practise
-PRATICE THE CODE
+PRATICE THE CODE 
 
