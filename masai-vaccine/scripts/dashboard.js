@@ -4,8 +4,6 @@ let tbody = document.querySelector("tbody");
 let popup = document.querySelector(".container");
 let filterdata=registerddata;
 
-//vaccinated data
-// let vdata=JSON.parse(localStorage.getItem("vaccinated"))||[]
 
 let str = "";
 displayData(registerddata)
@@ -28,11 +26,7 @@ data.forEach((e, index) => {
   let otp = document.createElement("td");
   otp.innerText = Math.floor(1000 + Math.random() * 9000);
 
-  // let td6 = document.createElement("button");
-  // td6.innerText = "Delete";
-  // td6.addEventListener("click",function(){
-  // })
-  //td6.style.color = "red";
+  
   
 
   let td6=document.createElement("td");
@@ -94,10 +88,7 @@ data.forEach((e, index) => {
     }
   }
 
-  // function deletebtn(e,ind){
-  //   registerddata.splice(ind,1)
-  //   localStorage.setItem("data",JSON.stringify(registerddata))
-// }
+
 
   tr.append(td1, td2, td3, td4, td5, otp, td7, td6 );
   tbody.append(tr);

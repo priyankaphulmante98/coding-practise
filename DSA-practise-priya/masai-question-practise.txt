@@ -68,17 +68,190 @@ function zTraversal(N,arr){
   console.log(bag);
 }
 
+
 5] Matrix Traversal & Queries ==>
+
+Approach 1 ==>
+
+function masaiTraversalAndQueries(N, M, q, arr){
+    let bag="";
+    if(q==1){
+        for(let p=0; p<N; p++){
+            if(p%2==0){
+                bag=bag+arr[p].join(" ")+" ";
+            }else{
+                bag=bag+arr[p].reverse().join(" ")+" ";
+            }
+        }
+    }else{
+        for(let p=0; p<N; p++){
+            if(p%2==1){
+                bag=bag+arr[p].join(" ")+" ";
+            }else{
+                bag=bag+arr[p].reverse().join(" ")+" ";
+            }
+        }
+    }
+    console.log(bag);
+}
+
 
 6] Circular Traversal ==> 
 
+Approach 1 ==>
+
+function runProgram(input){
+   input=input.trim().split("\n");
+   let tc=+input[0];
+   let line=1;
+   for(let p=0; p<tc; p++){
+       let n=+input[line++];
+       let mat=[];
+       for(let q=0; q<n; q++){
+         mat.push(input[line++].trim().split(" ").map(Number))
+       }
+       circular(mat,n)
+   }
+    // console.log(input);
+}
+function circular(mat, n){
+    let bag="";
+    
+    for(let p=n-1; p>=0; p--){
+        bag+=mat[p][0]+" ";
+    }
+    
+    for(let p=1; p<n; p++){
+        bag+=mat[0][p]+" ";
+    }
+    
+    for(let p=1; p<n; p++){
+        bag+=mat[p][mat.length-1]+" ";
+    }
+    
+    for(let p=n-2; p>=1; p--){
+        bag+=mat[n-1][p]+" ";
+    }
+    console.log(bag);
+    
+}
+
+Approach 2 ==>
+
+function runProgram(input) {
+    input=input.trim().split("\n");
+    let tc=+input[0];
+    let line=1;
+    for(let p=0; p<tc; p++){
+        let n= +input[line++];
+        let mat=[];
+        for(let q=0; q<n; q++){
+            mat.push(input[line++].trim().split(" ").map(Number));
+        }
+          circular(n,mat)
+    }
+    // console.log(input)
+}
+function circular(n,mat){
+    let bag="";
+    let left=0;
+    let right=n-1;
+    let bottom=n-1;
+    let top=0;
+    
+    for(let p=bottom; p>=top; p--){
+        bag+=mat[p][left]+" ";
+    }
+   left++;
+    
+    for(let p=left; p<=right; p++){
+        bag+=mat[top][p]+" ";
+    }
+    top--;
+    
+    for(let p=1; p<=bottom; p++){
+        bag+=mat[p][right]+" ";
+    }
+   
+   right--;
+   
+   for(let p=right; p>=left; p--){
+       bag+=mat[bottom][p]+" ";
+   }
+   bottom++;
+   console.log(bag);
+}
+
+
+
+
 7] Spiral Traversal (Rectangular Matrix) ==>
 
-8] Diamond Traversal ==> 
+ Approach 1 ==> 
 
-9] Conditional Matrix Sum ==>
+function spiralTraversal(N, M, arr){
+  let bag="";
+  
+  for(let p=0; p<N; p++){
+      bag+=arr[p][0]+" ";
+  }
+  
+  for(let p=1; p<M; p++){
+      bag+=arr[N-1][p]+" ";
+  }
+  
 
-10]  Transpose the Matrix ==> 
+for(let p=N-2; p>=0; p--){
+    bag+=arr[p][M-1]+" ";
+}
+
+for(let p=M-2; p>0; p--){
+    bag+=arr[0][p]+" ";
+}
+for(let p=1; p<=M-2; p++){
+    bag+=arr[N-2][p]+" ";
+}
+console.log(bag);
+}
+
+Approach 2 ==> 
+
+function spiralTraversal(N, M, arr){
+    let top = 0 , btm = N-1, left = 0, right = M-1;
+    let bag='',count=0
+    
+    while(count<N*M){
+        // elements of left most column
+    for(let i=top ; i<=btm &&count<N*M ; i++){
+        bag+= arr[i][left]+" ";
+        count++
+        
+    }
+    left++;
+    
+    // travels through bottom row
+    for(let i=left ; i<=right &&count<N*M  ; i++){
+        bag+= arr[btm][i]+" "
+        count++
+    }
+    btm--;
+    
+    // right most column
+    for(let i=btm ; i>=top&&count<N*M  ; i--){
+        bag+= arr[i][right]+" "
+        count++
+    }
+    right--
+    
+    // top most row
+    for(let i=right ; i>=left &&count<N*M ; i--){
+        bag+= arr[top][i]+" ";
+        count++
+    }top++
+}    
+    console.log(bag)
+}
+8] Transpose the Matrix ==> 
 
 function transposeTheMatrix(N, M, matrix){
  for(let col=0; col<M; col++){
@@ -90,6 +263,13 @@ function transposeTheMatrix(N, M, matrix){
  }
  
 }
+
+
+9] Diamond Traversal ==> 
+
+10] Conditional Matrix Sum ==>
+
+
 
 
 

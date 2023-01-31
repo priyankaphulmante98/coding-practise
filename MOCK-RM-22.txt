@@ -428,20 +428,58 @@ Understanding of npm packages will be looked into
 Understanding of Chakra UI is also looked at here.
 Any kind of plagiarism will be having strict actions
 
-Link: 
-
-deployed link ==>
-time ==> 
-
-Round 2 ==>
- 
-link ==> 
-time ==> 
+Link: https://near-ethernet-088.notion.site/Bug-Tracker-cc046b10517340fb99899a9ac628c8b3
+time ==> 6 hr
+deployed link ==> 
 
 Round 3 ==>
 
-link==> 
-Password ==>
+link==> https://oj.masaischool.com/contest/7234
+Password ==>29910
+
+will be a long DSA Contest, consisting  of questions from the following topics
+Arrays
+Strings
+Two Pointers, Sliding Window
+Sorting Algorithms
+Stacks
+Queues
+Linked List
+Recursion
+Backtracking
+Graphs
+Trees
+To Perform well in this round, you will have to use one (or more) of the above data structures to solve the questions
+Based on the time complexity of your solution, you might have to optimise your solutions based on the problem-solving techniques mentioned above
+You may need to use sorting algorithms for a question or two. You can decide which sorting algorithm to choose by looking at the constraints given in the problem statement
+
+
+******************  MOCK 12  **********
+
+Mock Assessment-12
+
+Round 1 ==>  
+
+Knowledge of API, Authentication, Folder structure
+Design of the schema/relationship between collections
+Knowledge of React and Chakra UI will be looked into.
+Good design will be looked into.
+Any kind of plagiarism will be having strict actions.
+
+Link:  https://near-ethernet-088.notion.site/Grow-Calculator-3ef886be851e4fdca6bdbe02af694786
+time ==> 4 hr
+deployed link ==> 
+
+Round 2 ==>
+
+link==> https://oj.masaischool.com/contest/7265
+Password ==>29109
+
+Round 3 ==>
+
+link==> https://oj.masaischool.com/contest/7267
+Password ==>91093
+
 
 will be a long DSA Contest, consisting  of questions from the following topics
 Arrays
