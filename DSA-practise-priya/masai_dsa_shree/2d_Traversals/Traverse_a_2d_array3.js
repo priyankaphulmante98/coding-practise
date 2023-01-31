@@ -1,13 +1,18 @@
-Traverse a 2D Array Ended
+/*
+Traverse a 2d array - 3 
 Description
 
 You are given a 2D array(matrix), ofNrows andMcolumns.
 
-You need to print elements of array as shown in the diagram, on a single line.
+You need to print elements of array in as shown in diagram, on a single line.
 
-Image
+Screenshot (93).png
 
 
+
+For example, for the above matrix, the required output would be as shown below.
+
+9 10 11 12 8 7 6 5 1 2 3 4
 
 
 Input
@@ -23,7 +28,7 @@ Constraints
 
 
 Output
-Print all elements of matrix on single line, in the order shown in diagram.
+Print all elements of matrix on single line, in the order as given in the problem statement.
 
 
 Sample Input 1 
@@ -35,16 +40,16 @@ Sample Input 1
 4 5 12
 Sample Output 1
 
-4 3 2 1 5 6 7 8 12 11 10 9
+9 10 11 12 8 7 6 5 1 2 3 4
 
-
-
+*/
 
 
 function traverse2dArray(N, M, matrix){
+    //write code here
     let bag=''
-    for(let i=0; i<M; i++){
-        for(let j=N-1;j>=0;j--){
+    for(let i=M-1; i>=0; i--){
+        for(let j=0; j< N ; j++){
             bag+=matrix[j][i]+" "
             
         }

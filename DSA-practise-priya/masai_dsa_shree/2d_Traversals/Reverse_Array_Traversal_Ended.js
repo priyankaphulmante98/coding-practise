@@ -1,3 +1,5 @@
+/*
+
 Reverse Array Traversal Ended
 Description
 
@@ -39,7 +41,7 @@ Therefore, the reverse traversal of this array will be
 
 
 ===========================================
-
+*/
 1. 
 function reverseArrayTraversal(n, arr){
     //write code here.

@@ -1,7 +1,8 @@
-Reverse N Traversal Ended
+/*
+N traversal 
 Description
 
-You are given a matrix of size n x n. Find the ReverseNtraversal of the matrix. Refer the following figure for better understanding.
+You are given a matrix of size n x n. Find theNtraversal of the matrix. Refer the following figure for better understanding.
 
 Image
 
@@ -35,24 +36,26 @@ Sample Input 1
 7 8 9
 Sample Output 1
 
-1 4 7 5 3 6 9 
+7 4 1 5 9 6 3 
+
+
+*/
 
 
 
 
-function nTraversal(matrix) {
-  
-  let t = 0, b=matrix.length-1,l=0,r = matrix[0].length-1,bag=''
-   for(let i=t; i<=b; i++){
+function nTraversal(matrix){
+   let t = 0, b=matrix.length-1,l=0,r = matrix[0].length-1,bag=''
+   for(let i=b; i>=t; i--){
        bag+=matrix[i][l]+' '
    }l++
-   for(let i=b-1,j=l; i>=t&&j<=r; i--,j++){
-       bag+=matrix[i][j]+' '
-   }t++
-   for(let i=t; i<=b; i++){
+   for(let i=l; i<=r; i++){
+       bag+=matrix[i][i]+' '
+   }b--
+   for(let i=b; i>=t; i--){
        bag+=matrix[i][r]+' '
    }
    
    console.log(bag)
-    
+          
 }
