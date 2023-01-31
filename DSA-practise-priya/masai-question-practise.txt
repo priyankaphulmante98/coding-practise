@@ -1,0 +1,97 @@
+1] Reverse Array Traversal==>
+
+function reverseArrayTraversal(n, arr){
+    let bag="";
+    for(let p=n-1; p>=0; p--){
+        bag+=arr[p]+" ";
+    }
+    console.log(bag);
+}
+
+approach 2==> 
+
+function reverseArrayTraversal(n, arr){
+    console.log(arr.reverse().join(" "))
+}
+
+2] N traversal  ==>
+
+function nTraversal(matrix) {
+let bag="";
+
+for(let p=matrix.length-1; p>=0; p--){
+    bag=bag+matrix[p][0]+" ";
+}
+
+for(let p=1; p<matrix.length; p++){
+    bag=bag+matrix[p][p]+" ";
+}
+for(let p=matrix.length-2; p>=0;p--){
+    bag=bag+matrix[p][matrix.length-1]+" ";
+
+}
+console.log(bag);
+}
+
+3] Reverse N Traversal ==>
+
+function nTraversal(matrix) {
+     let bag="";
+    for(let p=0; p<matrix.length; p++){
+        bag+=matrix[p][0]+" ";
+    }
+    for(let p=matrix.length-2, q=1; p>=0, q<matrix.length; p--, q++){
+        bag+=matrix[p][q]+" ";
+    }
+    for(let p=1; p<matrix.length; p++){
+        bag+=matrix[p][matrix.length-1]+" ";
+    }
+    console.log(bag);
+ 
+}
+
+4] Z Traversal ==>
+
+function zTraversal(N,arr){
+  let bag="";
+  for(let p=0; p<arr.length; p++){
+      bag+=arr[0][p]+" ";
+  }
+  
+  for(let p=1, q=arr.length-2; p<arr.length, q>=0; p++,q--){
+      bag+=arr[p][q]+" ";
+  }
+  
+  for(let p=1; p<arr.length; p++){
+      bag+=arr[arr.length-1][p]+" ";
+  }
+  console.log(bag);
+}
+
+5] Matrix Traversal & Queries ==>
+
+6] Circular Traversal ==> 
+
+7] Spiral Traversal (Rectangular Matrix) ==>
+
+8] Diamond Traversal ==> 
+
+9] Conditional Matrix Sum ==>
+
+10]  Transpose the Matrix ==> 
+
+function transposeTheMatrix(N, M, matrix){
+ for(let col=0; col<M; col++){
+     let bag="";
+     for(let row=0; row<N; row++){
+         bag=bag+matrix[row][col]+" ";
+     }
+     console.log(bag);
+ }
+ 
+}
+
+
+
+
+
