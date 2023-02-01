@@ -1,5 +1,7 @@
 function BubbleSort(arr){
+
 let n =  arr.length
+
     for(let k=0; k <=n-1; k++){
 
         for(let j=0; j <=n-1-k; j++){
@@ -10,7 +12,9 @@ let n =  arr.length
         
         }
     }
-console.log(arr)
+
+    console.log(arr)
+
     function swap(arr,l,r){
 
         [arr[l],arr[r]] = [arr[r],arr[l]]
