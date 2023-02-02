@@ -1,3 +1,72 @@
+/* 
+912. Sort an Array
+Medium
+3.2K
+602
+Companies
+Given an array of integers nums, sort the array in ascending order and return it.
+
+You must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
+
+ 
+
+Example 1:
+
+Input: nums = [5,2,3,1]
+Output: [1,2,3,5]
+Explanation: After sorting the array, the positions of some numbers are not changed (for example, 2 and 3), while the positions of other numbers are changed (for example, 1 and 5).
+Example 2:
+
+Input: nums = [5,1,1,2,0,0]
+Output: [0,0,1,1,2,5]
+Explanation: Note that the values of nums are not necessairly unique.
+ 
+
+Constraints:
+
+1 <= nums.length <= 5 * 104
+-5 * 104 <= nums[i] <= 5 * 104
+Accepted
+353.4K
+Submissions
+603.2K
+Acceptance Rate
+58.6%
+
+*/
+
+
+
+var sortArray = function(nums,left=0,right=nums.length-1) {
+
+
+    if(left <right){
+        let pind = pivot(nums,left,right);
+        sortArray(nums,left,pind-1)
+        sortArray(nums,pind+1,right)
+    }
+
+    return nums
+};
+
+function pivot(nums,left,right){
+    let p =right;
+    let j = left;
+    let i = left-1;
+    while(j<=p){
+        if(nums[j]<nums[p]){
+            i++;
+            [nums[i],nums[j]] =  [nums[j],nums[i]]
+            j++
+        }else j++
+
+    }
+    i++
+    [nums[i],nums[p]] =  [nums[p],nums[i]]
+    return i
+}
+
+
 
 /*    METHOD 2
 Pick the middle number as the pivot.
@@ -20,7 +89,7 @@ function sortArray(nums){
     return nums;
 }
 
-function quickSort(nums,start,end) {
+function quickSort(nums,start,end) { 
     if (start >= end) return;
     
     let left = start, right = end;
@@ -59,24 +128,4 @@ space complexity:
 on average O(logn), worst case O(n);
 decided by the depth of recursion.
 */
-//    3333333
 
-// mthod 3
-function quickSort(arr){
-       if(arr.length <= 1){
-            return arr;
-        }
-        let pivot = arr[arr.length - 1];
-        let left = [];
-        let right = [];
-        for(let i = 0; i < arr.length - 1; i++){
-            if(arr[i] < pivot){
-                left.push(arr[i]);
-            }else{
-                right.push(arr[i]);
-            }
-        }
-        return [...quickSort(left), pivot, ...quickSort(right)];
-    }
-    
-    console.log(quickSort([1,4,2,8,345,123,43,32,5643,63,123,43,2,55,1,234,92]));
