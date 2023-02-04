@@ -1,6 +1,6 @@
 
 
-// 8) Find is there any sub-array with the given sum [ return True/ False ]
+// 8) Find is there any sub-array with the given sum [ return True/ False ]  O(N)
 
 let arr = [1,4,20,3,10,5]
 let k =33
