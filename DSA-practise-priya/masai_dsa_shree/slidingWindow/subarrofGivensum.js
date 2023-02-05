@@ -16,7 +16,9 @@ function subArrSum(arr){
         sum-=arr[i]
 
     }
+
     return false
+    
 }
 
 
