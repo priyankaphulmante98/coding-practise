@@ -20,4 +20,4 @@ function subArrSum(arr){
 }
 
 
-console.log(subArrSum(arr));
+console.log(subArrSum(arr));  // results will be shown here
