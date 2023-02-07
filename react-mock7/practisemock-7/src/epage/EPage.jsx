@@ -7,6 +7,7 @@ import { CgMenuGridR } from "react-icons/cg";
 import { FaSearch } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Card from "./Card";
 
 function EPage() {
   return (
@@ -81,6 +82,9 @@ function EPage() {
           </Text>
         </HStack>
       </HStack>
+      <Box>
+        <Card/>
+      </Box>
     </>
   );
 }
