@@ -6,6 +6,8 @@
 //   A real-world example of a bubble sort algorithm is how the contact list on your phone is sorted in 
 //   alphabetical order
 
+// Bubble sort is a simple sorting algorithm. This sorting algorithm is comparison-based algorithm in which each pair of adjacent elements is compared and the elements are swapped if they are not in order. This algorithm is not suitable for large data sets as its average and worst case complexity are of Ο(n2) where n is the number of items.
+
 function solve(N,arr){
     let bag="";
     for(let p=0; p<N; p++){
@@ -108,6 +110,7 @@ function TwoSortedarray(n, arr, arr1){
               l++;
           }
       }
+      
       console.log(count);
 }
   
