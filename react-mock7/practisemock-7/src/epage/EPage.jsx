@@ -1,4 +1,3 @@
-import { Box, Hide, HStack, Show, Text } from "@chakra-ui/react";
 import React from "react";
 import { BsFillCheckCircleFill } from "react-icons/bs";
 import { IoFilterSharp } from "react-icons/io5";
@@ -8,83 +7,55 @@ import { FaSearch } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Card from "./Card";
+import style from "./card.module.css";
 
 function EPage() {
   return (
     <>
-      <HStack
-        justifyContent={"space-between"}
-        bg="white"
-        color="grey"
-        p="1rem"
-        w={"100%"}
-      >
-        <HStack gap={"0.3rem"}>
-          <BsFillCheckCircleFill as="span" />
+      <div id={style.container}>
+        {/* select div */}
+        <div className={style.container_select}>
+          <BsFillCheckCircleFill />
 
-          <Hide below="sm">Select</Hide>
-        </HStack>
+          <div className={style.filter_hide}>Select</div>
+        </div>
         {/* filter and sorting */}
-        <HStack gap='-1'>
-          <HStack
-            gap={"0.3rem"}
-            border="1px solid lightgrey"
-            p="0.2rem 0.7rem"
-            borderRadius="5px"
-          >
-         
-              <IoFilterSharp />
-           
-            <Show above="sm">Filter</Show>
-          </HStack>
+        <div className={style.container_filters}>
+          <div>
+            <IoFilterSharp />
+
+            <div className={style.filter_hide}>Filter</div>
+          </div>
           {/* search */}
-          <HStack
-            gap={"0.3rem"}
-            border="1px solid lightgrey"
-            p="0.2rem 0.7rem"
-            borderRadius="5px"
-          >
+          <div>
             <FaSearch />
-            <Show above="sm">Search</Show>
-          </HStack>
+            <div className={style.filter_hide}>Search</div>
+          </div>
           {/* edit */}
-          <HStack
-            gap={"0.3rem"}
-            border="1px solid lightgrey"
-            p="0.2rem 0.7rem"
-            borderRadius="5px"
-          >
-      
-              <MdEdit />
-       
-            <Show above="sm">Edit</Show>
-          </HStack>
+          <div>
+            <MdEdit />
+
+            <div className={style.filter_hide}>Edit</div>
+          </div>
           {/* delete */}
-          <HStack
-            gap={"0.3rem"}
-            border="1px solid lightgrey"
-            p="0.2rem 0.7rem"
-            borderRadius="5px"
-          >
-          
-              <RiDeleteBin6Line />
-     
-            <Show above="sm">Delete</Show>
-          </HStack>
-        </HStack>
+          <div>
+            <RiDeleteBin6Line />
+            <div className={style.filter_hide}>Delete</div>
+          </div>
+        </div>
         {/* menubars */}
-        <HStack>
-          <Text border="1px solid lightgrey" p="0.2rem" borderRadius="5px">
+        <div className={style.container_menudiv}>
+          <div>
             <IoMdMenu fontSize="1.2rem" />
-          </Text>
-          <Text border="1px solid lightgrey" p="0.2rem" borderRadius="5px">
-            <CgMenuGridR  fontSize="1.2rem" />
-          </Text>
-        </HStack>
-      </HStack>
-      <Box>
-        <Card/>
-      </Box>
+          </div>
+          <div>
+            <CgMenuGridR fontSize="1.2rem" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <Card />
+      </div>
     </>
   );
 }

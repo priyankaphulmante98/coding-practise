@@ -1,0 +1,96 @@
+#container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: grey;
+  padding: 1rem;
+  width: 100%;
+}
+.container_select {
+  display: flex;
+  gap: 0.3rem;
+  justify-content: center;
+  align-items: center;
+}
+.container_filters {
+  display: flex;
+  gap: 0.5rem;
+}
+.container_filters > div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid lightgrey;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+}
+.container_menudiv {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.container_menudiv div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid lightgrey;
+  padding: 0.2rem;
+  border-radius: 5px;
+}
+
+/* product card component */
+
+.card_grid {
+  display: grid;
+  gap: 1rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+.card_box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: black;
+}
+.card_box img {
+  height: 150px;
+  width: 120px;
+  margin: auto;
+  color: #000;
+}
+.card_checkbox {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color-scheme: skyblue;
+  transform: translate(2);
+}
+.filter_hide {
+  display: block;
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  .card_grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card_grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 480px) {
+  .card_grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .filter_hide {
+    display: none;
+  }
+}
