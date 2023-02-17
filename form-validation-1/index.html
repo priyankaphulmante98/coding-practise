@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>form-validation</title>
-    <link rel="stylesheet" href="./index.css">
-</head>
-<body>
-
- <h1 style="color:rgb(73, 70, 70)">Form Validation</h1>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <h1 style="color: rgb(73, 70, 70)">Form Validation</h1>
     <section>
-    <form id="form"  name="myForm" onsubmit="myFun()" >
+      <form id="form" name="myForm" onsubmit="myFun()">
         <label for="">Your Name</label>
-        <input type ="text" placeholder="john Doe"  id="name"  name="" /><br>
-        
+        <input type="text" placeholder="john Doe" id="name" name="" /><br />
+
         <span id="msg"></span>
         <label id="lemail">Email</label>
-        <input type="text" placeholder="john@domain.com" id="email" name="email" value=""  /><br>
+        <input
+          type="text"
+          placeholder="john@domain.com"
+          id="email"
+          name="email"
+          value=""
+        /><br />
 
         <label id="passmsg" for="">Password</label>
-        <input type="text" placeholder="Password" id="password" value=""  /><br>
+        <input
+          type="text"
+          placeholder="Password"
+          id="password"
+          value=""
+        /><br />
 
-        <input type="submit" id="button" value="VALIDATE"  />
-        
-    </form>
+        <input type="submit" id="button" value="VALIDATE" />
+      </form>
     </section>
-
-</body>
-</html> 
+  </body>
+</html>
 <script src="./index.js"></script>

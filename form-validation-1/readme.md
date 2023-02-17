@@ -15,34 +15,34 @@
 !(https://s3-us-west-2.amazonaws.com/secure.notion-static.com/af09e86f-a65f-4ed9-9501-cde21e0468e6/Screenshot_2022-10-14_at_4.04.16_PM.png)
 
 - Create a form which takes following information from the user
-    - Name
-    - Email - Use input type as “text” and not “email” , write custom logic
-    - Password
+  - Name
+  - Email - Use input type as “text” and not “email” , write custom logic
+  - Password
 - On clicking on Validate user should be able validate email and password using below validations.
 - You shouldn’t use regex to solve this, use conditional statements etc.
 
 ## Email Validation
 
-- Here are some examples of  invalid emails along with warnings to be shown below input boxes.
+- Here are some examples of invalid emails along with warnings to be shown below input boxes.
 
-| Email | Warning to be shown on UI |
-| --- | --- |
-| masai.school.com  | @ is not present |
-| masai@.com  | Domain can not start with dot .  |
-| @masai.school.net  | No character before @  |
-| name@gmail.b  | .b is not a valid tld  |
-| name@.org.org  | Domain can not start with dot .  |
-| .name@masaischool.org  | An email should not be start with .  |
-| masaischool()*@gmail.com  | Only allows character, digit, underscore, and dash  |
-| name..1234@yahoo.com  | Double dots are not allowed |
+| Email                     | Warning to be shown on UI                          |
+| ------------------------- | -------------------------------------------------- |
+| masai.school.com          | @ is not present                                   |
+| masai@.com                | Domain can not start with dot .                    |
+| @masai.school.net         | No character before @                              |
+| name@gmail.b              | .b is not a valid tld                              |
+| name@.org.org             | Domain can not start with dot .                    |
+| .name@masaischool.org     | An email should not be start with .                |
+| masaischool()\*@gmail.com | Only allows character, digit, underscore, and dash |
+| name..1234@yahoo.com      | Double dots are not allowed                        |
 
 ## Password Validation:
 
 - You should have following validation for password
-    - Length of password should be greater than 6.
-    - Only alphanumeric inputs are accepted in the password field.
-    - At-least one uppercase alphabet password.
-    - At-least one numeric value must be used in the password.
+  - Length of password should be greater than 6.
+  - Only alphanumeric inputs are accepted in the password field.
+  - At-least one uppercase alphabet password.
+  - At-least one numeric value must be used in the password.
 - Throw warnings if any of the above validations failed.
 - Note that you have throw multiple warnings if both email and password are not validated (check demo video)
 
